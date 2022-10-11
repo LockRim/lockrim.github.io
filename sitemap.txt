@@ -1,4 +1,0 @@
-http://lockrim.github.io/Blog/first/index.html
-http://lockrim.github.io/Blog/2022/10/11/The-first/
-http://lockrim.github.io/Blog/2022/10/11/hello-world/
-http://lockrim.github.io/Blog
