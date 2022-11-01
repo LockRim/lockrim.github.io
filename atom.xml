@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lockrim.github.io/"/>
-  <updated>2022-10-28T08:24:58.030Z</updated>
+  <updated>2022-11-01T13:25:25.733Z</updated>
   <id>https://lockrim.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://lockrim.github.io/2022/10/22/Archlinux%E4%BD%BF%E7%94%A8samba%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/"/>
     <id>https://lockrim.github.io/2022/10/22/Archlinux使用samba共享文件夹/</id>
     <published>2022-10-22T08:31:56.000Z</published>
-    <updated>2022-10-28T08:24:58.030Z</updated>
+    <updated>2022-11-01T13:25:25.733Z</updated>
     
     <summary type="html">
     
@@ -35,6 +35,12 @@
     
     </summary>
     
+      <category term="技术" scheme="https://lockrim.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="ArchLinux" scheme="https://lockrim.github.io/tags/ArchLinux/"/>
+    
+      <category term="samba" scheme="https://lockrim.github.io/tags/samba/"/>
     
   </entry>
   
