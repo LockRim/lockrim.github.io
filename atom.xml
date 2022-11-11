@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lockrim.github.io/"/>
-  <updated>2022-11-01T13:25:25.733Z</updated>
+  <updated>2022-11-11T08:00:47.070Z</updated>
   <id>https://lockrim.github.io/</id>
   
   <author>
@@ -17,21 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Windows下Potplayer打开4K视频设置</title>
+    <link href="https://lockrim.github.io/2022/11/11/Windows%E4%B8%8BPotplayer%E6%89%93%E5%BC%804K%E8%A7%86%E9%A2%91%E8%AE%BE%E7%BD%AE/"/>
+    <id>https://lockrim.github.io/2022/11/11/Windows下Potplayer打开4K视频设置/</id>
+    <published>2022-11-11T07:09:36.000Z</published>
+    <updated>2022-11-11T08:00:47.070Z</updated>
+    
+    <summary type="html">
+    
+      potplayer播放4k
+    
+    </summary>
+    
+      <category term="技术" scheme="https://lockrim.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="potplayer" scheme="https://lockrim.github.io/tags/potplayer/"/>
+    
+      <category term="windows" scheme="https://lockrim.github.io/tags/windows/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Archlinux使用samba共享文件夹</title>
     <link href="https://lockrim.github.io/2022/10/22/Archlinux%E4%BD%BF%E7%94%A8samba%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/"/>
     <id>https://lockrim.github.io/2022/10/22/Archlinux使用samba共享文件夹/</id>
     <published>2022-10-22T08:31:56.000Z</published>
-    <updated>2022-11-01T13:25:25.733Z</updated>
+    <updated>2022-11-11T07:59:56.340Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h1 id=&quot;Archlinux使用samba文件夹共享&quot;&gt;&lt;a href=&quot;#Archlinux使用samba文件夹共享&quot; class=&quot;headerlink&quot;
-        
-      
+      记录一下samba共享时的一些情况
     
     </summary>
     
