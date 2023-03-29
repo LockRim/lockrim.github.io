@@ -153,4 +153,32 @@
         <tag>mpv</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Next主题fa图标问题</title>
+    <url>/2023/03/29/Next%E4%B8%BB%E9%A2%98fa%E5%9B%BE%E6%A0%87%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><img src="/2023/03/29/Next%E4%B8%BB%E9%A2%98fa%E5%9B%BE%E6%A0%87%E9%97%AE%E9%A2%98/fa.jpg" class="" title="fa">
+
+<p>配置链接时发现没有哔哩哔哩图标问题</p>
+<p>查找发现是fontawesome即fa图标库版本问题</p>
+<p>现提供解决方案</p>
+<span id="more"></span>
+
+<h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>Next内置的fa图标库中没有国内的大部分图标</p>
+<p>以为fa是v5版本</p>
+<p>网络上的解决方案是去阿里矢量图上下载但是感觉很麻烦</p>
+<h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><p>其实我们完全可以通过更改CDN改变fa版本来解决</p>
+<p>bilibili图标在v6版本中实际上是有的</p>
+<p>更改主题配置文件<code>/blog/themes/next/_config.yml</code></p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">vendors:</span></span><br><span class="line">	<span class="attr">fontawesome:</span> <span class="string">https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css</span></span><br></pre></td></tr></table></figure>
+
+<p>搜索如上的类似代码添加cdn即可解决</p>
+]]></content>
+      <categories>
+        <category>主题</category>
+      </categories>
+      <tags>
+        <tag>Next</tag>
+        <tag>fontawesome</tag>
+      </tags>
+  </entry>
 </search>
