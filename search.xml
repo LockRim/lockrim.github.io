@@ -216,4 +216,73 @@
         <tag>mpv</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Rime-ice输入法安装</title>
+    <url>/2023/04/06/Rime-ice%E8%BE%93%E5%85%A5%E6%B3%95%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><img src="/2023/04/06/Rime-ice%E8%BE%93%E5%85%A5%E6%B3%95%E5%AE%89%E8%A3%85/rime.jpg" class="" title="rime">
+
+<p>由于四叶草许久没更新，所以换了个输入法</p>
+<p>在Arch Linux上安装<code>雾凇拼音</code>输入法</p>
+<span id="more"></span>
+
+<h1 id="安装与配置"><a href="#安装与配置" class="headerlink" title="安装与配置"></a>安装与配置</h1><p><strong>预置</strong>的配置文件和词库均位于<code>/usr/share/rime-data/</code>当中，需Root权限；</p>
+<p><strong>用户</strong>的配置文件位于以下目录，视你安装的输入法框架（Fcitx或IBUS）及其版本而定：</p>
+<ul>
+<li><code>~/.config/fcitx/rime</code>（Fcitx4）</li>
+<li><code>~/.local/share/fcitx5</code>（Fcitx5）</li>
+<li><code>~/.config/ibus/rime</code>（IBUS）</li>
+</ul>
+<ol>
+<li>通过以下命令安装 Rime 输入法：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yay -S fcitx5-im fcitx5-chinese-addons fcitx5-rime rime-ice</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><p>设置环境变量。通过 <code>vim</code> 编辑文件 <code>/etc/environment</code>：</p>
+<p>在文件中加入以下内容并保存退出：</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">GTK_IM_MODULE=fcitx</span><br><span class="line">QT_IM_MODULE=fcitx</span><br><span class="line">XMODIFIERS=@im=fcitx</span><br><span class="line">SDL_IM_MODULE=fcitx</span><br><span class="line">GLFW_IM_MODULE=ibus</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>创建ice的配置文件：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> ~/.local/share/fcitx5/rime <span class="comment"># 创建 rime 目录</span></span><br><span class="line">vim ~/.local/share/fcitx5/rime/default.custom.yaml</span><br></pre></td></tr></table></figure>
+
+<p>输入以下内容</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">patch:</span></span><br><span class="line">  <span class="attr">&quot;menu/page_size&quot;:</span> <span class="number">5</span>  <span class="comment">#候选词</span></span><br><span class="line">  <span class="attr">schema_list:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">schema:</span> <span class="string">rime_ice</span></span><br></pre></td></tr></table></figure>
+
+<p>保存并退出</p>
+<ol start="4">
+<li><p>右键输入法图标，重新启动或重新部署即可启用雾凇拼音输入法</p>
+</li>
+<li><p>（可选）增加萌娘百科词库</p>
+</li>
+</ol>
+<p>雾凇拼音取消了对萌娘词库的支持，如果需要得自己添加</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yay -S fcitx5-pinyin-moegirl-rime</span><br></pre></td></tr></table></figure>
+
+<p>安装完成之后将配置复制到个人配置目录</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cp</span> /usr/share/rime-data/rime_ice.dict.yaml ~/.local/share/fcitx5/rime/rime_ice.dict.yaml</span><br></pre></td></tr></table></figure>
+
+<p>打开配置文件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">code ~/.local/share/fcitx5/rime/rime_ice.dict.yaml</span><br></pre></td></tr></table></figure>
+
+<p>根据提示在<code>import_tables:</code>中添加词库</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">import_tables:</span></span><br><span class="line">  <span class="string">...</span></span><br><span class="line">  <span class="string">...</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">moegirl</span></span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li>尝试输入中文</li>
+</ol>
+<h1 id="使用体验"><a href="#使用体验" class="headerlink" title="使用体验"></a>使用体验</h1><p>更多的词库，更快的输入速度</p>
+]]></content>
+      <categories>
+        <category>配置</category>
+      </categories>
+      <tags>
+        <tag>雾凇拼音</tag>
+        <tag>rime-ice</tag>
+        <tag>arch</tag>
+      </tags>
+  </entry>
 </search>
