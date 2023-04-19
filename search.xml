@@ -5,6 +5,9 @@
     <url>/2022/10/11/AC2100%E7%9A%84OpenWrt%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><img src="/2022/10/11/AC2100%E7%9A%84OpenWrt%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/101947495.jpg" class="" width="101947495">
 
+<blockquote>
+<p>pid: 101947495</p>
+</blockquote>
 <p>入手一台AC2100，打算刷入OpenWrt进行多拨，科学上网，以针对校园网只能2个设备的限制，提升上网体验。还有多设备之间互联，快乐冲浪。</p>
 <p>我将从安装，配置和使用感受方面来总结</p>
 <span id="more"></span>
@@ -59,6 +62,9 @@
     <url>/2022/10/22/Archlinux%E4%BD%BF%E7%94%A8samba%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><img src="/2022/10/22/Archlinux%E4%BD%BF%E7%94%A8samba%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/2022.jpg" class="" title="20221011_634553b6c4b21">
 
+<blockquote>
+<p>pid: <a href="https://www.pixiv.net/artworks/97603880">97603880</a></p>
+</blockquote>
 <p>记录一下使用samba共享时的一些情况</p>
 <span id="more"></span>
 
@@ -114,6 +120,9 @@
     <url>/2023/03/29/Next%E4%B8%BB%E9%A2%98fa%E5%9B%BE%E6%A0%87%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><img src="/2023/03/29/Next%E4%B8%BB%E9%A2%98fa%E5%9B%BE%E6%A0%87%E9%97%AE%E9%A2%98/fa.jpg" class="" title="fa">
 
+<blockquote>
+<p>pid: 106449882</p>
+</blockquote>
 <p>配置链接时发现没有哔哩哔哩图标问题</p>
 <p>查找发现是fontawesome即fa图标库版本问题</p>
 <p>现提供解决方案</p>
@@ -140,8 +149,11 @@
   <entry>
     <title>Steam游戏闪退问题</title>
     <url>/2023/04/03/Steam%E6%B8%B8%E6%88%8F%E9%97%AA%E9%80%80%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1> <img src="/2023/04/03/Steam%E6%B8%B8%E6%88%8F%E9%97%AA%E9%80%80%E9%97%AE%E9%A2%98/steam-16805168741682.jpg" class="" title="steam">
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1> <img src="/2023/04/03/Steam%E6%B8%B8%E6%88%8F%E9%97%AA%E9%80%80%E9%97%AE%E9%A2%98/steam.jpg" class="" title="steam">
 
+<blockquote>
+<p>pid: <a href="https://www.pixiv.net/artworks/106421292">106421292</a></p>
+</blockquote>
 <p>在<code>Archlinux</code>安装steam</p>
 <p>结果在运行游戏的时候出现打开游戏闪退的现象</p>
 <p>检查发现是vulkan驱动问题</p>
@@ -171,18 +183,21 @@
     <url>/2023/03/12/%E8%AE%B0%E5%BD%95%E4%B8%8Bmpv%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><img src="/2023/03/12/%E8%AE%B0%E5%BD%95%E4%B8%8Bmpv%E9%85%8D%E7%BD%AE/105632895_p0-16796593136082.png" class="" title="105632895_p0">
 
+<blockquote>
+<p>pid: <a href="https://www.pixiv.net/artworks/105632895">105632895</a></p>
+</blockquote>
 <p>现在主要使用archlinux，看番使用的是mpv</p>
 <p>可自定义程度高，十分甚至九分的好用</p>
 <p>把配置记录备份一下</p>
 <span id="more"></span>
 
-<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>配置打包链接：<a href="https://pan.baidu.com/s/1_JyQi4VAGSHh6AcMUKH61Q?pwd=1234">https://pan.baidu.com/s/1_JyQi4VAGSHh6AcMUKH61Q?pwd=1234</a></p>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>配置打包链接：<a href="https://pan.baidu.com/s/1Mvw2C1UC4Beh-42qv62ueA?pwd=hk97">https://pan.baidu.com/s/1Mvw2C1UC4Beh-42qv62ueA?pwd=hk97</a></p>
 <p>linux下的文件路径 ~&#x2F;.config&#x2F;mpv</p>
-<p>mpv.conf</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">profile=gpu-hq</span><br><span class="line">save-position-on-quit=yes               # 退出时保存当前的播放状态</span><br><span class="line">watch-later-options=start,vid,aid,sid   # 限制保存播放状态的属性列表</span><br><span class="line">icc-profile-auto</span><br><span class="line">blend-subtitles=video</span><br><span class="line">scale=ewa_lanczossharp</span><br><span class="line">video-sync=display-resample</span><br><span class="line">interpolation</span><br><span class="line">tscale=oversample</span><br><span class="line">sub-auto=fuzzy</span><br><span class="line">sub-file-paths=subs</span><br><span class="line">no-border</span><br><span class="line">#vf-append = vapoursynth=&quot;~~/vs/svpflow_std.vpy&quot;</span><br><span class="line">hr-seek-framedrop=no #能在一定程度上避免音画不同步</span><br><span class="line">slang=chi,zh-CN,sc,chs,zh-Hans,简</span><br><span class="line">osc=no</span><br><span class="line">hwdec=auto-copy</span><br></pre></td></tr></table></figure>
+<p><code>mpv.conf</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">profile=gpu-hq</span><br><span class="line"></span><br><span class="line">save-position-on-quit=yes               # 退出时保存当前的播放状态</span><br><span class="line">watch-later-options=start,vid,aid,sid   # 限制保存播放状态的属性列表</span><br><span class="line">icc-profile-auto</span><br><span class="line">blend-subtitles=video</span><br><span class="line">scale=ewa_lanczossharp</span><br><span class="line"></span><br><span class="line">video-sync=display-resample</span><br><span class="line">#interpolation</span><br><span class="line">#tscale=oversample</span><br><span class="line"></span><br><span class="line">sub-auto=fuzzy</span><br><span class="line">sub-file-paths=subs</span><br><span class="line">no-border</span><br><span class="line">#vf-append = vapoursynth=&quot;~~/vs/svpflow_std.vpy&quot;</span><br><span class="line">hr-seek-framedrop=no        # [补帧时推荐设置为no] 跳转时允许丢帧，默认 yes 。禁用它利于修正音频延迟</span><br><span class="line">slang=chi,zh-CN,sc,chs,zh-Hans,简,eng</span><br><span class="line">osc=no</span><br><span class="line">hwdec=nvdec-copy</span><br><span class="line">#hwdec=no</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p>input.conf</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Watch later when quit</span><br><span class="line"># q quit</span><br><span class="line">q quit-watch-later</span><br><span class="line"># Q quit-watch-later</span><br><span class="line">#ESC &#123;encode&#125; quit 4</span><br><span class="line">#CLOSE_WIN quit</span><br><span class="line">CLOSE_WIN quit-watch-later</span><br><span class="line">#CLOSE_WIN &#123;encode&#125; quit 4</span><br><span class="line"></span><br><span class="line">LEFT          seek -5</span><br><span class="line">RIGHT         seek 5</span><br><span class="line">CTRL+LEFT     seek -30</span><br><span class="line">CTRL+RIGHT    seek 30</span><br><span class="line"></span><br><span class="line">WHEEL_UP      add volume 2  # 滚轮上增加 2% 音量</span><br><span class="line">WHEEL_DOWN    add volume -2 # 滚轮下减少 2% 音量</span><br><span class="line">WHEEL_LEFT    seek 10       # 滚轮左快进 10 秒</span><br><span class="line">WHEEL_RIGHT   seek -10      # 滚轮右后退 10 秒</span><br><span class="line">UP            add volume 5</span><br><span class="line">DOWN          add volume -5</span><br><span class="line"></span><br><span class="line">t             cycle ontop       # 置顶</span><br><span class="line">TAB script-binding stats/display-stats-toggle #绑定TAB键为显示播放信息</span><br><span class="line"></span><br><span class="line">MBTN_LEFT 		ignore					#鼠标左键 无操作</span><br><span class="line">MBTN_LEFT_DBL 	cycle fullscreen		#左键双击 切换全屏</span><br><span class="line">\ set speed 1.0						#播放速度设为1</span><br><span class="line">] add speed 0.1						#播放速度+0.1</span><br><span class="line">[ add speed -0.1					#播放速度-0.1</span><br><span class="line"></span><br><span class="line">PGUP add chapter -1					#视频上一章节</span><br><span class="line">PGDWN add chapter 1					#视频下一章节</span><br><span class="line">Ctrl+PGUP playlist-prev					#播放列表上一个</span><br><span class="line">Ctrl+PGDWN playlist-next					#播放列表下一个</span><br><span class="line"></span><br><span class="line">Ctrl+1 vf toggle vapoursynth=&quot;~~/vs/svpflow_std.vpy&quot;</span><br></pre></td></tr></table></figure>
+<p><code>input.conf</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Watch later when quit</span><br><span class="line"># q quit</span><br><span class="line">q quit-watch-later</span><br><span class="line">#Q quit-watch-later</span><br><span class="line">#ESC &#123;encode&#125; quit 4</span><br><span class="line">#CLOSE_WIN quit</span><br><span class="line">CLOSE_WIN quit-watch-later</span><br><span class="line">#CLOSE_WIN &#123;encode&#125; quit 4</span><br><span class="line"></span><br><span class="line">LEFT          seek -5</span><br><span class="line">RIGHT         seek 5</span><br><span class="line">CTRL+LEFT     seek -30</span><br><span class="line">CTRL+RIGHT    seek 30</span><br><span class="line"></span><br><span class="line">WHEEL_UP      add volume 2  # 滚轮上增加 2% 音量</span><br><span class="line">WHEEL_DOWN    add volume -2 # 滚轮下减少 2% 音量</span><br><span class="line">WHEEL_LEFT    seek 10       # 滚轮左快进 10 秒</span><br><span class="line">WHEEL_RIGHT   seek -10      # 滚轮右后退 10 秒</span><br><span class="line">UP            add volume 5</span><br><span class="line">DOWN          add volume -5</span><br><span class="line"></span><br><span class="line">t             cycle ontop       # 置顶</span><br><span class="line">TAB script-binding stats/display-stats-toggle #绑定TAB键为显示播放信息</span><br><span class="line"></span><br><span class="line">MBTN_LEFT 		ignore					#鼠标左键 无操作</span><br><span class="line">MBTN_LEFT_DBL 	cycle fullscreen		#左键双击 切换全屏</span><br><span class="line">MOUSE_BTN2      ignore                  #右键忽略</span><br><span class="line"></span><br><span class="line">\ set speed 1.5						#播放速度设为1.5</span><br><span class="line">] add speed 0.1						#播放速度+0.1</span><br><span class="line">[ add speed -0.1					#播放速度-0.1</span><br><span class="line"></span><br><span class="line">PGUP add chapter -1					#视频上一章节</span><br><span class="line">PGDWN add chapter 1					#视频下一章节</span><br><span class="line">Ctrl+PGUP playlist-prev				#播放列表上一个</span><br><span class="line">Ctrl+PGDWN playlist-next			#播放列表下一个</span><br><span class="line"></span><br><span class="line">Ctrl+1 vf toggle vapoursynth=&quot;~~/vs/svpflow_std.vpy&quot;</span><br></pre></td></tr></table></figure>
 
 <h1 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h1><h2 id="autoload脚本"><a href="#autoload脚本" class="headerlink" title="autoload脚本"></a>autoload脚本</h2><p><a href="https://github.com/mpv-player/mpv/blob/master/TOOLS/lua/autoload.lua">autoload</a></p>
 <p>使用方法在其中有写</p>
@@ -192,7 +207,7 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yay -S vapoursynth-plugin-svpflow</span><br></pre></td></tr></table></figure>
 
 <p>安装插件，以下是配置脚本，放在mpv&#x2F;vs&#x2F;svpflow_std.vpy</p>
-<p>在mpv.conf的注释删除</p>
+<p>在<code>mpv.conf</code>的注释删除</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">### svpflow补60帧，一般消耗，补偿帧为8位</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> vapoursynth <span class="keyword">as</span> vs</span><br><span class="line"><span class="keyword">from</span> vapoursynth <span class="keyword">import</span> core</span><br><span class="line"></span><br><span class="line">smoothfps_params = <span class="string">&quot;&#123;rate:&#123;num:60,den:1,abs:true&#125;,algo:21,gpuid:0,mask:&#123;area:100&#125;,scene:&#123;limits:&#123;m1:1800,m2:3600,scene:5200,zero:100,blocks:45&#125;&#125;&#125;&quot;</span></span><br><span class="line"><span class="comment">## rate后设定目标帧率，num/den的结果(分子分母最好使用整数，计算结果最好也是整数)：当abs:true时指定为具体帧数值，当abs:false时为补帧倍率（vfr视频请使用倍帧来避免报错弹出）</span></span><br><span class="line"><span class="comment">## gpuid用于指定哪张显卡辅助CPU加速，可用数值为 (默认)0/11/12/21。双显卡笔记本在使用外屏时若掉帧则尝试改为21</span></span><br><span class="line"></span><br><span class="line">super_params = <span class="string">&quot;&#123;pel:2,gpu:0,scale:&#123;up:2,down:4&#125;&#125;&quot;</span></span><br><span class="line">analyse_params = <span class="string">&quot;&#123;block:&#123;w:32,h:32,overlap:2&#125;,main:&#123;levels:4,search:&#123;type:4,distance:-8,coarse:&#123;type:4,distance:-5,bad:&#123;range:0&#125;&#125;&#125;,penalty:&#123;plevel:1.3,pzero:110,pnbour:75&#125;&#125;,refine:[&#123;thsad:200,search:&#123;type:4,distance:2&#125;&#125;]&#125;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> container_fps &gt; <span class="number">32</span> :</span><br><span class="line">	<span class="keyword">raise</span> Warning(<span class="string">&quot;源帧率超过限制的范围，已临时禁用该脚本。&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">interpolate</span>(<span class="params">clip</span>) :</span><br><span class="line">	clip_f = clip.resize.Bilinear(<span class="built_in">format</span>=vs.YUV420P8)</span><br><span class="line"></span><br><span class="line">	<span class="built_in">super</span> = core.svp1.Super(clip_f, super_params)</span><br><span class="line">	vectors = core.svp1.Analyse(<span class="built_in">super</span>[<span class="string">&quot;clip&quot;</span>], <span class="built_in">super</span>[<span class="string">&quot;data&quot;</span>], clip_f, analyse_params)</span><br><span class="line">	smooth = core.svp2.SmoothFps(clip, <span class="built_in">super</span>[<span class="string">&quot;clip&quot;</span>], <span class="built_in">super</span>[<span class="string">&quot;data&quot;</span>], vectors[<span class="string">&quot;clip&quot;</span>], vectors[<span class="string">&quot;data&quot;</span>], smoothfps_params, src=clip_f, fps=container_fps)</span><br><span class="line">	assume = core.std.AssumeFPS(smooth, fpsnum=smooth.fps_num, fpsden=smooth.fps_den)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> assume</span><br><span class="line"></span><br><span class="line">interpolate(video_in).set_output()</span><br></pre></td></tr></table></figure>
 
 <h2 id="thumbfast-略缩图脚本"><a href="#thumbfast-略缩图脚本" class="headerlink" title="thumbfast 略缩图脚本"></a>thumbfast 略缩图脚本</h2><img src="/2023/03/12/%E8%AE%B0%E5%BD%95%E4%B8%8Bmpv%E9%85%8D%E7%BD%AE/2023-04-05_12-54.png" class="" title="2023-04-05_12-54">
@@ -204,6 +219,20 @@
 <p>本人使用MPV-lazy的<a href="https://github.com/hooke007/MPV_lazy/blob/main/portable_config/scripts/osc_plus.lua">osc_plus脚本</a></p>
 <p>并配合其配套的<a href="https://github.com/hooke007/MPV_lazy/blob/main/portable_config/script-opts/osc.conf">osc配置文件</a></p>
 <p>需要注意的是这俩文件需改为同一文件名</p>
+<h2 id="Playlistmanager"><a href="#Playlistmanager" class="headerlink" title="Playlistmanager"></a>Playlistmanager</h2><p>管理播放列表的插件</p>
+<p><a href="https://github.com/jonniek/mpv-playlistmanager">Playlistmanager</a></p>
+<p>这里说下相关的配置更改</p>
+<p><code>script-opt/playlistmanager.conf</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#playlist ass style overrides</span><br><span class="line">#example &#123;\fnUbuntu\fs10\b0\bord1&#125; equals: font=Ubuntu, size=10, bold=no, border=1</span><br><span class="line">#read http://docs.aegisub.org/3.2/ASS_Tags/ for reference of tags</span><br><span class="line">#no values defaults to OSD settings in mpv.conf</span><br><span class="line">style_ass_tags=&#123;\fn汉仪正圆\fs17\b1\bord1&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里是更改显示的字体，字号，粗细，边框</p>
+<p>根据自身需求更改即可</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#slice long filenames, and how many chars to show</span><br><span class="line">slice_longfilenames=yes</span><br><span class="line">slice_longfilenames_amount=80</span><br></pre></td></tr></table></figure>
+
+<p>这里是限制文件名的长度，避免过长</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#Playlist file templates</span><br><span class="line">#%pos = position of file with leading zeros</span><br><span class="line">#%name = title or name of file</span><br><span class="line">#%N = newline</span><br><span class="line">#you can also use the ass tags mentioned above. For example:</span><br><span class="line">#  selected_file=&#123;\c&amp;HFF00FF&amp;&#125;➔ %name   | to add a color for selected file. However, if you</span><br><span class="line">#  use ass tags you need to reset them for every line (see https://github.com/jonniek/mpv-playlistmanager/issues/20)</span><br><span class="line">normal_file=&#123;\c&amp;HFFFFFF&amp;&#125;○ %name</span><br><span class="line">hovered_file=&#123;\c&amp;H33FFFF&amp;&#125;● %name</span><br><span class="line">selected_file=&#123;\c&amp;H00BFFF&amp;&#125;➔ %name</span><br><span class="line">playing_file=&#123;\c&amp;HAAAAAA&amp;&#125;▷ %name</span><br><span class="line">playing_hovered_file=&#123;\c&amp;H00FF00&amp;&#125;▶ %name</span><br><span class="line">playing_selected_file=&#123;\c&amp;HFFFF00&amp;&#125;➤ %name</span><br></pre></td></tr></table></figure>
+
+<p>这里是可以修改相关操作的样式，按照说明我增加的颜色相关设置</p>
 <h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><blockquote>
 <p>[<a href="https://vcb-s.com/archives/7594">VCB-Studio 科普教程 2.3] 跨平台播放器 mpv 配置入门</a></p>
 <p><a href="https://github.com/hooke007/MPV_lazy">MPV_lazy</a></p>
@@ -221,6 +250,9 @@
     <url>/2023/04/06/Rime-ice%E8%BE%93%E5%85%A5%E6%B3%95%E5%AE%89%E8%A3%85/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><img src="/2023/04/06/Rime-ice%E8%BE%93%E5%85%A5%E6%B3%95%E5%AE%89%E8%A3%85/rime.jpg" class="" title="rime">
 
+<blockquote>
+<p>pid: 106809212</p>
+</blockquote>
 <p>由于四叶草许久没更新，所以换了个输入法</p>
 <p>在Arch Linux上安装<code>雾凇拼音</code>输入法</p>
 <span id="more"></span>
@@ -283,6 +315,70 @@
         <tag>雾凇拼音</tag>
         <tag>rime-ice</tag>
         <tag>arch</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在KDE下使用Wallpaper Engine</title>
+    <url>/2023/04/19/%E5%9C%A8linux%E4%B8%8B%E4%BD%BF%E7%94%A8Wallpaper-Engine/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><img src="/2023/04/19/%E5%9C%A8linux%E4%B8%8B%E4%BD%BF%E7%94%A8Wallpaper-Engine/104696295_p0.png" class="" title="104696295_p0">
+
+<blockquote>
+<p>pid：<a href="https://www.pixiv.net/artworks/104696295">104696295</a></p>
+</blockquote>
+<p>尝试在linux下使用Wallpaper Engine，但是并不能控制桌面</p>
+<p>找到了一个插件可以做到桌面播放Wallpaper Engine中的视频</p>
+<span id="more"></span>
+
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>以下是官方地址：</p>
+<p><a href="https://github.com/catsout/wallpaper-engine-kde-plugin">wallpaper-engine-kde-plugin</a></p>
+<p>其中有相关操作说明，这里给下部分汉化和相关问题解决</p>
+<h2 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h2><p>Arch:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -S extra-cmake-modules plasma-framework gst-libav base-devel mpv-git python-websockets qt5-declarative qt5-websockets qt5-webchannel vulkan-headers cmake</span><br></pre></td></tr></table></figure>
+
+<p>本人使用arch与mpv-git</p>
+<h2 id="构建与安装"><a href="#构建与安装" class="headerlink" title="构建与安装"></a>构建与安装</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Download source</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/catsout/wallpaper-engine-kde-plugin.git</span><br><span class="line"><span class="built_in">cd</span> wallpaper-engine-kde-plugin</span><br><span class="line"></span><br><span class="line"><span class="comment"># Download submodule (glslang)</span></span><br><span class="line">git submodule update --init</span><br><span class="line"></span><br><span class="line"><span class="comment"># Configure</span></span><br><span class="line"><span class="comment"># &#x27;USE_PLASMAPKG=ON&#x27;: using plasmapkg2 tool to install plugin</span></span><br><span class="line"><span class="built_in">mkdir</span> build &amp;&amp; <span class="built_in">cd</span> build</span><br><span class="line">cmake .. -DUSE_PLASMAPKG=ON</span><br><span class="line"></span><br><span class="line"><span class="comment"># Build</span></span><br><span class="line">make -j<span class="variable">$nproc</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Install package (ignore if USE_PLASMAPKG=OFF for system-wide installation)</span></span><br><span class="line">make install_pkg</span><br><span class="line"><span class="comment"># install lib</span></span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
+
+<p>note：</p>
+<p>这一过程会安装上相关的插件，更新也需运行上方的命令</p>
+<h2 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h2><ol>
+<li>删除该文件中列出的文件 <code>wallpaper-engine-kde-plugin/build/install_manifest.txt</code></li>
+<li><code>plasmapkg2 -r ~/.local/share/plasma/wallpapers/com.github.casout.wallpaperEngineKde</code></li>
+</ol>
+<h1 id="使用相关"><a href="#使用相关" class="headerlink" title="使用相关"></a>使用相关</h1><ol>
+<li><p>需要安装steam</p>
+</li>
+<li><p>桌面右键配置桌面，选择相关插件</p>
+<p>选择Wallpaper Engine下载目录，一般默认<code>~/.local/share/Steam</code></p>
+</li>
+</ol>
+<h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><ol>
+<li><p>scene场景虽然可以播放但是并不稳定，最好还是用video</p>
+</li>
+<li><p>重启KDE桌面的命令为</p>
+<p><code>systemctl --user restart plasma-plasmashell.service</code></p>
+</li>
+<li><p>使用mpv进行播放会有更好的体验</p>
+</li>
+<li><p>没找到循环播放的选项，测试发现mpv可以循环</p>
+</li>
+</ol>
+<h2 id="崩溃之后的处理"><a href="#崩溃之后的处理" class="headerlink" title="崩溃之后的处理"></a>崩溃之后的处理</h2><ul>
+<li>在<code>~/.config/plasma-org.kde.plasma.desktop-appletsrc</code>文件中删除<code>WallpaperSource</code>这一行</li>
+<li>重启KDE桌面</li>
+</ul>
+<h2 id="设置后桌面黑屏"><a href="#设置后桌面黑屏" class="headerlink" title="设置后桌面黑屏"></a>设置后桌面黑屏</h2><p>缺少<a href="https://wiki.archlinux.org/title/GStreamer">gstreamer</a>相关解码器</p>
+<p>下载安装后重启即可</p>
+<h1 id="使用体验"><a href="#使用体验" class="headerlink" title="使用体验"></a>使用体验</h1><p>在linux上成功使用Wallpaper Engine</p>
+<p>在只有桌面的情况下自动熄屏失效</p>
+<p>会略微增加发热</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>KDE</tag>
+        <tag>Wallpaper Engine</tag>
       </tags>
   </entry>
 </search>
