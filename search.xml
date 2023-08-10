@@ -508,21 +508,21 @@
 <li>播放浏览器视频时会卡住，静音则会继续播放</li>
 <li>使用mpv播放视频按下空格，会突然退出</li>
 </ol>
-<h1 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h1><p>多次尝试之后发现，当我使用<code>pipewire</code>时会出现「1」情况，而在使用<code>pulseaudio</code>不会出现</p>
+<h1 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h1><p><strong>最后发现是<code>sof-firmware</code>更新之后出现的问题，使用<code>downgrade</code>降级之后解决</strong></p>
+<p>下面的问题可能也是<code>sof-firmware</code>导致的</p>
+<hr>
+<p>多次尝试之后发现，当我使用<code>pipewire</code>时会出现「1」情况，而在使用<code>pulseaudio</code>不会出现</p>
 <ul>
 <li>快速跳转时<code>pipewire</code>播放音频的速度和时间比<code>pulseaudio</code>更快和少，即延迟更低，但是电音出现概率上升了，不清楚为何</li>
 </ul>
 <p>在使用<code>pulseaudio</code>时则会出现「2」情况</p>
 <ul>
-<li><img src="/2023/07/25/%E8%AE%B0%E5%BD%95ArchLinux%E5%87%BA%E7%8E%B0%E7%9A%84%E5%A3%B0%E9%9F%B3%E9%97%AE%E9%A2%98/image-20230725150425924.png" class="" title="image-20230725150425924">
-</li>
-<li><p><code>archlinux</code>给出的解决方案，我也不知道我这里在安装什么之后好了</p>
-</li>
+<li><img src="/2023/07/25/%E8%AE%B0%E5%BD%95ArchLinux%E5%87%BA%E7%8E%B0%E7%9A%84%E5%A3%B0%E9%9F%B3%E9%97%AE%E9%A2%98/image-20230725150425924.png" class="" title="image-20230725150425924"></li>
+<li><code>archlinux</code>给出的解决方案，我是在使用<code>pipewire-media-session</code>后解决的</li>
 </ul>
-<p>使用<code>pulseaudio</code>与<code>mpv</code>时出现「3」状况，<code>pipewire</code>不记得有没有了</p>
+<p>使用<code>pulseaudio</code>与<code>mpv</code>时出现「3」状况，<code>pipewire</code>也有该情况</p>
 <ul>
-<li>测试发现<code>pulseaudio</code>使用<code>pipewire-media-session</code>暂时没有出现该went</li>
-<li>pipewire则使用<code>wireplumber</code></li>
+<li>最后发现是<code>sof-firmware</code>更新之后出现的问题，使用<code>downgrade</code>降级之后解决</li>
 </ul>
 <hr>
 <p>以下是我的软件包截图</p>
