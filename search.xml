@@ -69,8 +69,8 @@
 <span id="more"></span>
 
 <p>使用kde桌面 dolphin文件管理器</p>
-<p>一般而言，samba是直接安装的，无需下载</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yay -S samba</span><br></pre></td></tr></table></figure>
+<p>samba以及dolphin的samba插件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yay -S samba kdenetwork-filesharing</span><br></pre></td></tr></table></figure>
 
 <h1 id="1-设置用户组并配置smb-conf文件"><a href="#1-设置用户组并配置smb-conf文件" class="headerlink" title="1. 设置用户组并配置smb.conf文件"></a>1. 设置用户组并配置smb.conf文件</h1><p>1.创建用户分享文件夹</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo mkdir /var/lib/samba/usershares </span><br></pre></td></tr></table></figure>
@@ -85,7 +85,7 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo chmod 1770 /var/lib/samba/usershares</span><br></pre></td></tr></table></figure>
 
 <p>更改smb.conf文件</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo vim /etc/samba/smb.conf </span><br><span class="line">--------------------------------------------- </span><br><span class="line">[global]  </span><br><span class="line">usershare path = /var/lib/samba/usershares  </span><br><span class="line">usershare max shares = 100  </span><br><span class="line">usershare allow guests = yes  </span><br><span class="line">usershare owner only = no</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo vim /etc/samba/smb.conf </span><br><span class="line">--------------------------------------------- </span><br><span class="line">[global]  </span><br><span class="line">	usershare path = /var/lib/samba/usershares  </span><br><span class="line">	usershare max shares = 100  </span><br><span class="line">	usershare allow guests = yes  </span><br><span class="line">	usershare owner only = no</span><br></pre></td></tr></table></figure>
 
 <p>添加一个用户，记得更改名字，将会同时设置密码</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo smbpasswd -a your_username</span><br></pre></td></tr></table></figure>
@@ -501,6 +501,7 @@
 
 <p>突然出现的关于声音的各种问题</p>
 <p>记录一下我的试错过程</p>
+<p>最后还是不行，重装了系统好了，以下内容仅供参考</p>
 <span id="more"></span>
 
 <h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><ol>
