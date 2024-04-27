@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+<meta name="msvalidate.01" content="33DAA7CC12D52964DF71E2FA8F1D7CAF" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/avatar.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/avatar.jpg">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"lockrim.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"manual"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="前言   pid: 105632895  现在主要使用 archlinux，看番使用的是 mpv 可自定义程度高，十分甚至九分的好用 把配置记录备份一下">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记录下mpv配置">
+<meta property="og:url" content="http://lockrim.top/2024/04/24/%E8%AE%B0%E5%BD%95%E4%B8%8Bmpv%E9%85%8D%E7%BD%AE/index.html">
+<meta property="og:site_name" content="LockRim·小站">
+<meta property="og:description" content="前言   pid: 105632895  现在主要使用 archlinux，看番使用的是 mpv 可自定义程度高，十分甚至九分的好用 把配置记录备份一下">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://lockrim.top/2024/04/24/%E8%AE%B0%E5%BD%95%E4%B8%8Bmpv%E9%85%8D%E7%BD%AE/105632895_p0-16796593136082.png">
+<meta property="og:image" content="http://lockrim.top/2024/04/24/%E8%AE%B0%E5%BD%95%E4%B8%8Bmpv%E9%85%8D%E7%BD%AE/image-20240424190516469.png">
+<meta property="article:published_time" content="2024-04-24T12:01:24.000Z">
+<meta property="article:modified_time" content="2024-04-24T11:08:50.923Z">
+<meta property="article:author" content="LockRim">
+<meta property="article:tag" content="mpv">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://lockrim.top/2024/04/24/%E8%AE%B0%E5%BD%95%E4%B8%8Bmpv%E9%85%8D%E7%BD%AE/105632895_p0-16796593136082.png">
+
+<link rel="canonical" href="http://lockrim.top/2024/04/24/%E8%AE%B0%E5%BD%95%E4%B8%8Bmpv%E9%85%8D%E7%BD%AE/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>记录下mpv配置 | LockRim·小站</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">LockRim·小站</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">个人博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-links">
+
+    <a href="/links/" rel="section"><i class="fa fa-link fa-fw"></i>links</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-番剧">
+
+    <a href="/bangumis/" rel="section"><i class="fa fa-tv fa-fw"></i>番剧</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://lockrim.top/2024/04/24/%E8%AE%B0%E5%BD%95%E4%B8%8Bmpv%E9%85%8D%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="LockRim">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LockRim·小站">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          记录下mpv配置
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-04-24 20:01:24 / 修改时间：19:08:50" itemprop="dateCreated datePublished" datetime="2024-04-24T20:01:24+08:00">2024-04-24</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%85%8D%E7%BD%AE/" itemprop="url" rel="index"><span itemprop="name">配置</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><img src="/2024/04/24/%E8%AE%B0%E5%BD%95%E4%B8%8Bmpv%E9%85%8D%E7%BD%AE/105632895_p0-16796593136082.png" class="" title="105632895_p0">
+
+<blockquote>
+<p>pid: <a target="_blank" rel="noopener" href="https://www.pixiv.net/artworks/105632895">105632895</a></p>
+</blockquote>
+<p>现在主要使用 archlinux，看番使用的是 mpv</p>
+<p>可自定义程度高，十分甚至九分的好用</p>
+<p>把配置记录备份一下</p>
+<span id="more"></span>
+
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>配置打包链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1Sus0Mhdk_Lhd_pVsblNDOg">百度云</a></p>
+<p>linux 下的文件路径 ~&#x2F;.config&#x2F;mpv</p>
+<p><code>mpv.conf</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">############</span><br><span class="line"># 渲染相关 #</span><br><span class="line">############</span><br><span class="line">vo=gpu-next</span><br><span class="line">profile=high-quality</span><br><span class="line">gpu-api=vulkan</span><br><span class="line"># # icc-profile-auto=yes            # 色彩管理</span><br><span class="line">video-output-levels=full        # RGB范围</span><br><span class="line"></span><br><span class="line">########</span><br><span class="line"># 视频 #</span><br><span class="line">########</span><br><span class="line">save-position-on-quit=yes               # 退出时保存当前的播放状态</span><br><span class="line">watch-later-options=start,vid,aid,sid   # 限制保存播放状态的属性列表</span><br><span class="line"># 补帧</span><br><span class="line">video-sync=display-resample</span><br><span class="line">interpolation=yes</span><br><span class="line">tscale=oversample</span><br><span class="line"># hr-seek-framedrop=no          # [补帧时推荐设置为no] 跳转时允许丢帧，默认 yes 。禁用它利于修正音频延迟</span><br><span class="line"># 在开启精确搜索时设为no可能会导致跳转的速度变慢</span><br><span class="line"></span><br><span class="line">#############</span><br><span class="line"># 硬解/软解 #</span><br><span class="line">#############</span><br><span class="line"># hwdec=auto-copy</span><br><span class="line">hwdec=auto</span><br><span class="line"># hwdec=no</span><br><span class="line">hwdec-codecs=all    # 尽可能所有格式先尝试硬解</span><br><span class="line"></span><br><span class="line">########</span><br><span class="line"># 字幕 #</span><br><span class="line"># ########</span><br><span class="line">sub-auto=fuzzy</span><br><span class="line">sub-file-paths=subs</span><br><span class="line">blend-subtitles=video                   # 字幕分辨率渲染同步</span><br><span class="line">slang=chi,zh-CN,sc,chs,zh-Hans,简,eng,SC,CHS   # 自动加载简中字幕</span><br><span class="line"></span><br><span class="line">########</span><br><span class="line"># 缓存 #</span><br><span class="line">########</span><br><span class="line">cache=yes</span><br><span class="line">demuxer-max-bytes=500MiB        # 最大向后缓存大小（KiB或MiB）</span><br><span class="line">cache-on-disk=no              # 用内存而不是磁盘缓存</span><br><span class="line"></span><br><span class="line">########</span><br><span class="line"># 音频 #</span><br><span class="line">########</span><br><span class="line"># pulse-latency-hacks=yes     # 修复pulseaudio暂停后卡顿</span><br><span class="line"></span><br><span class="line">########</span><br><span class="line"># 杂项 #</span><br><span class="line">########</span><br><span class="line">osc=no              # 禁用内置osc</span><br><span class="line">no-border           # 无边框</span><br><span class="line">load-stats-overlay=no   # 禁用内置stats.lua脚本</span><br><span class="line">hr-seek=yes         # 精确搜索</span><br><span class="line"># keepaspect-window=no</span><br><span class="line"># log-file=&quot;~~/mpv.log&quot;</span><br></pre></td></tr></table></figure>
+
+<p><code>input.conf</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"># 退出时保存播放进度 #</span><br><span class="line">q quit-watch-later</span><br><span class="line"># CLOSE_WIN quit-watch-later</span><br><span class="line"></span><br><span class="line"># 视频控制 #</span><br><span class="line">LEFT            seek -5</span><br><span class="line">RIGHT           seek 5</span><br><span class="line">CTRL+LEFT       seek -30</span><br><span class="line">CTRL+RIGHT      seek 30</span><br><span class="line">SHIFT+LEFT      seek -1</span><br><span class="line">SHIFT+RIGHT     seek 1</span><br><span class="line">ALT+LEFT        seek -10</span><br><span class="line">ALT+RIGHT       seek 10</span><br><span class="line"></span><br><span class="line"># 音量控制 #</span><br><span class="line">WHEEL_UP      add volume 2      # 滚轮上加 2% 音量</span><br><span class="line">WHEEL_DOWN    add volume -2     # 滚轮下减 2% 音量</span><br><span class="line">UP            add volume 5      # 上方向加 5%</span><br><span class="line">DOWN          add volume -5     # 下方向减 5%</span><br><span class="line"></span><br><span class="line"># 鼠标操作 #</span><br><span class="line">MBTN_LEFT       ignore                  #鼠标左键 无操作</span><br><span class="line">MBTN_LEFT_DBL   cycle fullscreen        #左键双击 切换全屏</span><br><span class="line">MBTN_RIGHT      ignore                  #右键忽略</span><br><span class="line">MBTN_FORWARD    playlist-prev           #前</span><br><span class="line">MBTN_BACK       playlist-next           #后</span><br><span class="line"></span><br><span class="line"># 倍速相关 #</span><br><span class="line">\ set speed 1.3     #播放速度设为1.3</span><br><span class="line">] add speed 0.1     #播放速度+0.1</span><br><span class="line">[ add speed -0.1    #播放速度-0.1</span><br><span class="line"></span><br><span class="line"># 章节相关 #</span><br><span class="line">PGUP add chapter -1                 #视频上一章节</span><br><span class="line">PGDWN add chapter 1                 #视频下一章节</span><br><span class="line"></span><br><span class="line"># 播放列表 #</span><br><span class="line">Ctrl+PGUP playlist-prev             #播放列表上一个</span><br><span class="line">Ctrl+PGDWN playlist-next            #播放列表下一个</span><br><span class="line"></span><br><span class="line"># 着色器 #</span><br><span class="line">CTRL+` change-list glsl-shaders clr &quot;&quot;</span><br><span class="line">CTRL+1 change-list glsl-shaders toggle &quot;~~/shaders/Anime4K_Restore_CNN_M.glsl&quot;</span><br><span class="line">CTRL+2 change-list glsl-shaders toggle &quot;~~/shaders/Anime4K_Upscale_Denoise_CNN_x2_M.glsl&quot;</span><br><span class="line"># Ctrl+3 vf toggle vapoursynth=&quot;~~/vs/svpflow_std.vpy&quot;    #补帧脚本</span><br><span class="line"></span><br><span class="line"># 杂项 #</span><br><span class="line">t cycle ontop   # 置顶</span><br><span class="line">TAB script-binding stats/display-stats-toggle   #绑定TAB键为显示播放信息</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h2><h3 id="autoload-脚本"><a href="#autoload-脚本" class="headerlink" title="autoload 脚本"></a>autoload 脚本</h3><p><a target="_blank" rel="noopener" href="https://github.com/mpv-player/mpv/blob/master/TOOLS/lua/autoload.lua">autoload</a></p>
+<p>使用方法在其中有写</p>
+<h3 id="thumbfast-略缩图脚本"><a href="#thumbfast-略缩图脚本" class="headerlink" title="thumbfast 略缩图脚本"></a>thumbfast 略缩图脚本</h3><img src="/2024/04/24/%E8%AE%B0%E5%BD%95%E4%B8%8Bmpv%E9%85%8D%E7%BD%AE/image-20240424190516469.png" class="" title="image-20240424190516469">
+
+<p>通过该脚本可以为视频生成略缩图</p>
+<p>以下是项目地址</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/po5/thumbfast">thumbfast</a></p>
+<p>注意该项目需要在<code>mpv.conf</code>中添加 osc&#x3D;no 并配置支持该插件的 osc 才可运行</p>
+<p>本人使用 MPV-lazy 的<a target="_blank" rel="noopener" href="https://github.com/hooke007/MPV_lazy/blob/main/portable_config/scripts/osc_plus.lua">osc_plus 脚本</a></p>
+<p>并配合其配套的 <a target="_blank" rel="noopener" href="https://github.com/hooke007/MPV_lazy/blob/main/portable_config/script-opts/osc.conf">osc </a> 和 <a target="_blank" rel="noopener" href="https://github.com/hooke007/MPV_lazy/blob/main/portable_config/script-opts/osc_plus.conf">osc_plus</a> 配置文件</p>
+<p>需要注意的是这俩文件需改为同一文件名</p>
+<h2 id="Playlistmanager"><a href="#Playlistmanager" class="headerlink" title="Playlistmanager"></a>Playlistmanager</h2><p>管理播放列表的插件</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/jonniek/mpv-playlistmanager">Playlistmanager</a></p>
+<p>这里说下相关的配置更改</p>
+<p><code>script-opt/playlistmanager.conf</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#playlist ass style overrides</span><br><span class="line">#example &#123;\fnUbuntu\fs10\b0\bord1&#125; equals: font=Ubuntu, size=10, bold=no, border=1</span><br><span class="line">#read http://docs.aegisub.org/3.2/ASS_Tags/ for reference of tags</span><br><span class="line">#no values defaults to OSD settings in mpv.conf</span><br><span class="line">style_ass_tags=&#123;\fn汉仪正圆\fs17\b1\bord1&#125;</span><br></pre></td></tr></table></figure>
+
+<p>⬆️ 这里是更改显示的字体，字号，粗细，边框</p>
+<p>根据自身需求更改即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#slice long filenames, and how many chars to show</span><br><span class="line">slice_longfilenames=yes</span><br><span class="line">slice_longfilenames_amount=80</span><br></pre></td></tr></table></figure>
+
+<p>⬆️ 这里是限制文件名的长度，避免过长</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#Playlist file templates</span><br><span class="line">#%pos = position of file with leading zeros</span><br><span class="line">#%name = title or name of file</span><br><span class="line">#%N = newline</span><br><span class="line">#you can also use the ass tags mentioned above. For example:</span><br><span class="line">#  selected_file=&#123;\c&amp;HFF00FF&amp;&#125;➔ %name   | to add a color for selected file. However, if you</span><br><span class="line">#  use ass tags you need to reset them for every line (see https://github.com/jonniek/mpv-playlistmanager/issues/20)</span><br><span class="line">normal_file=&#123;\c&amp;HFFFFFF&amp;&#125;○ %name</span><br><span class="line">hovered_file=&#123;\c&amp;H33FFFF&amp;&#125;● %name</span><br><span class="line">selected_file=&#123;\c&amp;H00BFFF&amp;&#125;➔ %name</span><br><span class="line">playing_file=&#123;\c&amp;HAAAAAA&amp;&#125;▷ %name</span><br><span class="line">playing_hovered_file=&#123;\c&amp;H00FF00&amp;&#125;▶ %name</span><br><span class="line">playing_selected_file=&#123;\c&amp;HFFFF00&amp;&#125;➤ %name</span><br></pre></td></tr></table></figure>
+
+<p>⬆️ 这里是可以修改相关操作的样式，按照说明我增加了颜色相关设置</p>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><blockquote>
+<p>[<a target="_blank" rel="noopener" href="https://vcb-s.com/archives/7594">VCB-Studio 科普教程 2.3] 跨平台播放器 mpv 配置入门</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/hooke007/MPV_lazy">MPV_lazy</a></p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/mpv/" rel="tag"># mpv</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/07/25/%E8%AE%B0%E5%BD%95ArchLinux%E5%87%BA%E7%8E%B0%E7%9A%84%E5%A3%B0%E9%9F%B3%E9%97%AE%E9%A2%98/" rel="prev" title="记录ArchLinux出现的声音问题">
+      <i class="fa fa-chevron-left"></i> 记录ArchLinux出现的声音问题
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%84%9A%E6%9C%AC"><span class="nav-number">3.</span> <span class="nav-text">脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#autoload-%E8%84%9A%E6%9C%AC"><span class="nav-number">3.1.</span> <span class="nav-text">autoload 脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#thumbfast-%E7%95%A5%E7%BC%A9%E5%9B%BE%E8%84%9A%E6%9C%AC"><span class="nav-number">3.2.</span> <span class="nav-text">thumbfast 略缩图脚本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Playlistmanager"><span class="nav-number">4.</span> <span class="nav-text">Playlistmanager</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E7%94%A8"><span class="nav-number">5.</span> <span class="nav-text">引用</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="LockRim"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">LockRim</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/LockRim" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;LockRim" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:lockrim.czh@gmail.com" title="E-Mail → mailto:lockrim.czh@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/lock_rim" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;lock_rim" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/22757457" title="BiliBili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;22757457" rel="noopener" target="_blank"><i class="fab fa-bilibili fa-fw"></i>BiliBili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://bgm.tv/user/lock_rim" title="Bangumi → https:&#x2F;&#x2F;bgm.tv&#x2F;user&#x2F;lock_rim" rel="noopener" target="_blank"><i class="fa fa-tv fa-fw"></i>Bangumi</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2022 – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LockRim</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">4k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">15 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '50dc424ae6a283cdd3af',
+      clientSecret: '589a285e1fd52efd6ca02654a320e1df1207232f',
+      repo        : 'lockrim.github.io',
+      owner       : 'LockRim',
+      admin       : ['LockRim'],
+      id          : 'dd0bb8993ba6c85cb560e84722aa4e4b',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+ 
+
+</body>
+</html>
