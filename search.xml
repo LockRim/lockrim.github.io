@@ -3,7 +3,7 @@
   <entry>
     <title>AC2100的OpenWrt使用体验</title>
     <url>/2022/10/11/AC2100%E7%9A%84OpenWrt%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><img src="/2022/10/11/AC2100%E7%9A%84OpenWrt%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/101947495.jpg" class="" width="101947495">
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><img src="/2022/10/11/AC2100%E7%9A%84OpenWrt%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/101947495.jpg" class="" width="101947495">
 
 <blockquote>
 <p>pid: 101947495</p>
@@ -12,7 +12,7 @@
 <p>我将从安装，配置和使用感受方面来总结</p>
 <span id="more"></span>
 
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="刷入breed固件"><a href="#刷入breed固件" class="headerlink" title="刷入breed固件"></a>刷入breed固件</h2><p>需要将路由器版本手动下降到2.0.7版本，下载地址：</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="刷入breed固件"><a href="#刷入breed固件" class="headerlink" title="刷入breed固件"></a>刷入breed固件</h3><p>需要将路由器版本手动下降到2.0.7版本，下载地址：</p>
 <p><a href="http://cdn.cnbj1.fds.api.mi-img.com/xiaoqiang/rom/rm2100/miwifi_rm2100_firmware_d6234_2.0.7.bin">红米AC2100</a> ，<a href="http://cdn.cnbj1.fds.api.mi-img.com/xiaoqiang/rom/r2100/miwifi_r2100_firmware_4b519_2.0.722.bin">小米AC2100</a></p>
 <p>最好提前准备固件 <a href="https://openwrt.mpdn.fun:8443/?dir=lede/mtk/">BleachWrt</a></p>
 <p>在系统界面进行固件降级 使用网线连接路由器，确保已连接上网络，该方法需要连网下载</p>
@@ -24,30 +24,30 @@
 <p>若没有请从新进入后台再次重复上面过程</p>
 <p>无需检查坏块，现在的固件应该会自动跳过坏块部分（待定）</p>
 <p>成功后拔掉电源，卡针插入reset孔，插入电源，直到系统指示灯闪烁蓝光，若失败请从新刷入breed</p>
-<h2 id="刷入OpenWrt固件"><a href="#刷入OpenWrt固件" class="headerlink" title="刷入OpenWrt固件"></a>刷入OpenWrt固件</h2><p>浏览器输入192.168.1.1进入breed</p>
+<h3 id="刷入OpenWrt固件"><a href="#刷入OpenWrt固件" class="headerlink" title="刷入OpenWrt固件"></a>刷入OpenWrt固件</h3><p>浏览器输入192.168.1.1进入breed</p>
 <p>推荐使用 BleachWrt 内置多种插件，无需自己设置</p>
 <p>按照安装说明进行固件刷入，推荐使用精简版本</p>
 <p>网线无需改为lan口，wan口一样可以刷入固件，环境变量必须设置</p>
-<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><h2 id="连网"><a href="#连网" class="headerlink" title="连网"></a>连网</h2><p>首先第一步，连接校园网，点开网络-DHCP&#x2F;DNS</p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="连网"><a href="#连网" class="headerlink" title="连网"></a>连网</h3><p>首先第一步，连接校园网，点开网络-DHCP&#x2F;DNS</p>
 <p>将重绑定关闭 进行保存&amp;应用</p>
-<h2 id="多拨配置"><a href="#多拨配置" class="headerlink" title="多拨配置"></a>多拨配置</h2><p>点开多线多拨</p>
+<h3 id="多拨配置"><a href="#多拨配置" class="headerlink" title="多拨配置"></a>多拨配置</h3><p>点开多线多拨</p>
 <p>启用多线多拨，取消掉线检测，设置需要的接口数量</p>
 <p>保存并应用，等待完成</p>
 <p>点开接口，将新出现的接口全部设置为DHCP客户端，在高级设置中为每一个接口设置独立的网关跃点，保存后多拨设置完成</p>
 <p>查看状态-负载均衡中接口是否同时在线</p>
 <p>至此，多拨完成</p>
 <p>可使用<a href="http://speedtest.cn/">speedtest</a>进行测速</p>
-<h2 id="更新内核"><a href="#更新内核" class="headerlink" title="更新内核"></a>更新内核</h2><p>BleachWrt的内核版本是5.4.203 如果要opkg一些其他安装包会出现内核错误的提示，需要将内核进行更新</p>
+<h3 id="更新内核"><a href="#更新内核" class="headerlink" title="更新内核"></a>更新内核</h3><p>BleachWrt的内核版本是5.4.203 如果要opkg一些其他安装包会出现内核错误的提示，需要将内核进行更新</p>
 <p><a href="https://downloads.openwrt.org/snapshots/targets/ramips/mt7621/packages/">openwrt下mt7621版本</a></p>
 <p>找到kernel文件</p>
 <p>下载后上传到路由&#x2F;tmp文件夹下，winSCP很好用</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">opkg install /tmp/kernel_...</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
 
 <p>安装后重启，系统概括中内核版本不变，但可以下载软件</p>
-<h1 id="使用感受"><a href="#使用感受" class="headerlink" title="使用感受"></a>使用感受</h1><h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><p>突破校园网的设备限制确实很爽，而且还能进行文件共享，无需文件互传就可以躺床上用平板看电脑上的电影咯</p>
-<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><p>不过AC2100设备性能限制，多拨和openclash不能同时使用 BitComet设置中</p>
+<h2 id="使用感受"><a href="#使用感受" class="headerlink" title="使用感受"></a>使用感受</h2><h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><p>突破校园网的设备限制确实很爽，而且还能进行文件共享，无需文件互传就可以躺床上用平板看电脑上的电影咯</p>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>不过AC2100设备性能限制，多拨和openclash不能同时使用 BitComet设置中</p>
 <p>需要将UDP连接数减小才可以使用DHT下载文件</p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>十分的好的软路由，❤来自🇨🇳</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>十分的好的软路由，❤ 来自 🇨🇳</p>
 ]]></content>
       <categories>
         <category>技术</category>
@@ -60,7 +60,7 @@
   <entry>
     <title>Archlinux使用samba共享文件夹</title>
     <url>/2022/10/22/Archlinux%E4%BD%BF%E7%94%A8samba%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><img src="/2022/10/22/Archlinux%E4%BD%BF%E7%94%A8samba%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/2022.jpg" class="" title="20221011_634553b6c4b21">
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><img src="/2022/10/22/Archlinux%E4%BD%BF%E7%94%A8samba%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/2022.jpg" class="" title="20221011_634553b6c4b21">
 
 <blockquote>
 <p>pid: <a href="https://www.pixiv.net/artworks/97603880">97603880</a></p>
@@ -72,11 +72,11 @@
 <p>samba以及dolphin的samba插件</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yay -S samba kdenetwork-filesharing</span><br></pre></td></tr></table></figure>
 
-<h1 id="1-设置用户组并配置smb-conf文件"><a href="#1-设置用户组并配置smb-conf文件" class="headerlink" title="1. 设置用户组并配置smb.conf文件"></a>1. 设置用户组并配置smb.conf文件</h1><p>1.创建用户分享文件夹</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo mkdir /var/lib/samba/usershares </span><br></pre></td></tr></table></figure>
+<h2 id="1-设置用户组并配置smb-conf文件"><a href="#1-设置用户组并配置smb-conf文件" class="headerlink" title="1. 设置用户组并配置smb.conf文件"></a>1. 设置用户组并配置smb.conf文件</h2><p>1.创建用户分享文件夹</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo mkdir /var/lib/samba/usershares</span><br></pre></td></tr></table></figure>
 
 <p>2.创建用户组</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo groupadd -r sambashare </span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo groupadd -r sambashare</span><br></pre></td></tr></table></figure>
 
 <p>3.把目录的所有者改为root，把组改为sambashare</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo chown root:sambashare /var/lib/samba/usershares</span><br></pre></td></tr></table></figure>
@@ -85,7 +85,9 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo chmod 1770 /var/lib/samba/usershares</span><br></pre></td></tr></table></figure>
 
 <p>更改smb.conf文件</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo vim /etc/samba/smb.conf </span><br><span class="line">--------------------------------------------- </span><br><span class="line">[global]  </span><br><span class="line">	usershare path = /var/lib/samba/usershares  </span><br><span class="line">	usershare max shares = 100  </span><br><span class="line">	usershare allow guests = yes  </span><br><span class="line">	usershare owner only = no</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo vim /etc/samba/smb.conf</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[global]</span><br><span class="line">    usershare path = /var/lib/samba/usershares</span><br><span class="line">    usershare max shares = 100</span><br><span class="line">    usershare allow guests = yes</span><br><span class="line">    usershare owner only = no</span><br></pre></td></tr></table></figure>
 
 <p>添加一个用户，记得更改名字，将会同时设置密码</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo smbpasswd -a your_username</span><br></pre></td></tr></table></figure>
@@ -97,15 +99,15 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo systemctl restart smb.service nmb.service</span><br></pre></td></tr></table></figure>
 
 <p>注销并重新进入系统</p>
-<h1 id="2-利用Dolphin设置共享"><a href="#2-利用Dolphin设置共享" class="headerlink" title="2. 利用Dolphin设置共享"></a>2. 利用Dolphin设置共享</h1><p>打开dolphin，找到你需要设置的文件或文件夹，右键属性即可找到共享</p>
+<h2 id="2-利用Dolphin设置共享"><a href="#2-利用Dolphin设置共享" class="headerlink" title="2. 利用Dolphin设置共享"></a>2. 利用Dolphin设置共享</h2><p>打开dolphin，找到你需要设置的文件或文件夹，右键属性即可找到共享</p>
 <p>启动服务</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo systemctl start smb </span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo systemctl start smb</span><br></pre></td></tr></table></figure>
 
 <p>加入自启动</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo systemctl enable smb </span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo systemctl enable smb</span><br></pre></td></tr></table></figure>
 
 <p>这样设置之后重启也会保存之前共享的文件夹了</p>
-<h1 id="使用体验"><a href="#使用体验" class="headerlink" title="使用体验"></a>使用体验</h1><p>这下躺床上也可以用平板看电脑上下载的番剧咯</p>
+<h2 id="使用体验"><a href="#使用体验" class="headerlink" title="使用体验"></a>使用体验</h2><p>这下躺床上也可以用平板看电脑上下载的番剧咯</p>
 ]]></content>
       <categories>
         <category>技术</category>
@@ -118,7 +120,7 @@
   <entry>
     <title>Arch系统转移</title>
     <url>/2023/05/22/Arch%E7%B3%BB%E7%BB%9F%E8%BD%AC%E7%A7%BB/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><img src="/2023/05/22/Arch%E7%B3%BB%E7%BB%9F%E8%BD%AC%E7%A7%BB/103842593_p0.png" class="" title="103842593_p0">
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><img src="/2023/05/22/Arch%E7%B3%BB%E7%BB%9F%E8%BD%AC%E7%A7%BB/103842593_p0.png" class="" title="103842593_p0">
 
 <blockquote>
 <p>pid：103842593</p>
@@ -129,14 +131,14 @@
 <p>参考自 <a href="https://wiki.archlinux.org/title/Migrate_installation_to_new_hardware">将安装迁移到新硬件（ArchWiki）</a></p>
 <span id="more"></span>
 
-<h1 id="前置工作"><a href="#前置工作" class="headerlink" title="前置工作"></a>前置工作</h1><ul>
+<h2 id="前置工作"><a href="#前置工作" class="headerlink" title="前置工作"></a>前置工作</h2><ul>
 <li><p>需要U盘安装Arch系统</p>
 <p><a href="https://mirrors.ustc.edu.cn/">中科大镜像</a></p>
 </li>
 <li><p>系统转移到的空间 &gt; 转移前的空间</p>
 </li>
 </ul>
-<h1 id="迁移工作"><a href="#迁移工作" class="headerlink" title="迁移工作"></a>迁移工作</h1><h2 id="使用dd进行系统迁移"><a href="#使用dd进行系统迁移" class="headerlink" title="使用dd进行系统迁移"></a>使用<code>dd</code>进行系统迁移</h2><p><a href="https://wiki.archlinux.org/title/Dd#Disk_cloning_and_restore">dd（ArchWiki）</a></p>
+<h2 id="迁移工作"><a href="#迁移工作" class="headerlink" title="迁移工作"></a>迁移工作</h2><h3 id="使用dd进行系统迁移"><a href="#使用dd进行系统迁移" class="headerlink" title="使用dd进行系统迁移"></a>使用<code>dd</code>进行系统迁移</h3><p><a href="https://wiki.archlinux.org/title/Dd#Disk_cloning_and_restore">dd（ArchWiki）</a></p>
 <p>假设从<code>/dev/sda1</code>到<code>/dev/sdb1</code></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">dd</span> <span class="keyword">if</span>=/dev/sda1 of=/dev/sdb1 bs=64K conv=noerror,<span class="built_in">sync</span> status=progress</span><br></pre></td></tr></table></figure>
 
@@ -148,20 +150,20 @@
 <li><p><strong>注意这会将UUID也一起复制</strong>，在同一硬盘迁移中需更改UUID值</p>
 </li>
 </ul>
-<h2 id="更新fstab"><a href="#更新fstab" class="headerlink" title="更新fstab"></a>更新fstab</h2><p>挂载<code>/mnt</code>分区，<code>EFI</code>分区，<code>swap</code>分区</p>
+<h3 id="更新fstab"><a href="#更新fstab" class="headerlink" title="更新fstab"></a>更新fstab</h3><p>挂载<code>/mnt</code>分区，<code>EFI</code>分区，<code>swap</code>分区</p>
 <p>更新fstab</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">genfstab -U /mnt &gt; /mnt/etc/fstab</span><br></pre></td></tr></table></figure>
 
-<h2 id="重新生成内核镜像"><a href="#重新生成内核镜像" class="headerlink" title="重新生成内核镜像"></a>重新生成内核镜像</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mkinitcpio -P</span><br></pre></td></tr></table></figure>
+<h3 id="重新生成内核镜像"><a href="#重新生成内核镜像" class="headerlink" title="重新生成内核镜像"></a>重新生成内核镜像</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mkinitcpio -P</span><br></pre></td></tr></table></figure>
 
-<h1 id="相关错误"><a href="#相关错误" class="headerlink" title="相关错误"></a>相关错误</h1><ul>
+<h2 id="相关错误"><a href="#相关错误" class="headerlink" title="相关错误"></a>相关错误</h2><ul>
 <li><p>更新UUID值</p>
 </li>
 <li><p>使用btrfs文件系统没有更新所以在dolphin中没有扩大</p>
 <p>使用以下命令</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">btrfs filesystem resize max /</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h1 id="后言"><a href="#后言" class="headerlink" title="后言"></a>后言</h1><p>好评如潮，♥️来自🇨🇳</p>
+<h2 id="后言"><a href="#后言" class="headerlink" title="后言"></a>后言</h2><p>好评如潮，♥️来自🇨🇳</p>
 <p>Linux空间大了好多真是舒服啊</p>
 ]]></content>
       <categories>
@@ -174,25 +176,25 @@
   <entry>
     <title>Next主题fa图标问题</title>
     <url>/2023/03/29/Next%E4%B8%BB%E9%A2%98fa%E5%9B%BE%E6%A0%87%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><img src="/2023/03/29/Next%E4%B8%BB%E9%A2%98fa%E5%9B%BE%E6%A0%87%E9%97%AE%E9%A2%98/fa.jpg" class="" title="fa">
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><img src="/2023/03/29/Next%E4%B8%BB%E9%A2%98fa%E5%9B%BE%E6%A0%87%E9%97%AE%E9%A2%98/fa.jpg" class="" title="fa">
 
 <blockquote>
 <p>pid: 106449882</p>
 </blockquote>
 <p>配置链接时发现没有哔哩哔哩图标问题</p>
-<p>查找发现是fontawesome即fa图标库版本问题</p>
+<p>查找发现是 fontawesome 即fa图标库版本问题</p>
 <p>现提供解决方案</p>
 <span id="more"></span>
 
-<h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>Next内置的fa图标库中没有国内的大部分图标</p>
-<p>以为fa是v5版本</p>
+<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>Next内置的fa图标库中没有国内的大部分图标</p>
+<p>因为fa是v5版本</p>
 <p>网络上的解决方案是去阿里矢量图上下载但是感觉很麻烦</p>
-<h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><p>其实我们完全可以通过更改CDN改变fa版本来解决</p>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>其实我们完全可以通过更改CDN改变fa版本来解决</p>
 <p>bilibili图标在v6版本中实际上是有的</p>
 <p>更改主题配置文件<code>/blog/themes/next/_config.yml</code></p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">vendors:</span></span><br><span class="line">	<span class="attr">fontawesome:</span> <span class="string">https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">vendors:</span></span><br><span class="line">    <span class="attr">fontawesome:</span> <span class="string">https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css</span></span><br></pre></td></tr></table></figure>
 
-<p>搜索如上的类似代码添加cdn即可解决</p>
+<p>搜索如上的类似代码添加CDN即可解决</p>
 ]]></content>
       <categories>
         <category>主题</category>
@@ -205,7 +207,7 @@
   <entry>
     <title>Rime-ice输入法安装</title>
     <url>/2023/04/06/Rime-ice%E8%BE%93%E5%85%A5%E6%B3%95%E5%AE%89%E8%A3%85/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><img src="/2023/04/06/Rime-ice%E8%BE%93%E5%85%A5%E6%B3%95%E5%AE%89%E8%A3%85/rime.jpg" class="" title="rime">
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><img src="/2023/04/06/Rime-ice%E8%BE%93%E5%85%A5%E6%B3%95%E5%AE%89%E8%A3%85/rime.jpg" class="" title="rime">
 
 <blockquote>
 <p>pid: 106809212</p>
@@ -214,7 +216,7 @@
 <p>在Arch Linux上安装<code>雾凇拼音</code>输入法</p>
 <span id="more"></span>
 
-<h1 id="安装与配置"><a href="#安装与配置" class="headerlink" title="安装与配置"></a>安装与配置</h1><p><strong>预置</strong>的配置文件和词库均位于<code>/usr/share/rime-data/</code>当中，需Root权限；</p>
+<h2 id="安装与配置"><a href="#安装与配置" class="headerlink" title="安装与配置"></a>安装与配置</h2><p><strong>预置</strong>的配置文件和词库均位于<code>/usr/share/rime-data/</code>当中，需Root权限；</p>
 <p><strong>用户</strong>的配置文件位于以下目录，视你安装的输入法框架（Fcitx或IBUS）及其版本而定：</p>
 <ul>
 <li><code>~/.config/fcitx/rime</code>（Fcitx4）</li>
@@ -222,48 +224,40 @@
 <li><code>~/.config/ibus/rime</code>（IBUS）</li>
 </ul>
 <ol>
-<li>通过以下命令安装 Rime 输入法：</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yay -S fcitx5-im fcitx5-chinese-addons fcitx5-rime rime-ice-git</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
+<li><p>通过以下命令安装 Rime 输入法：</p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yay -S fcitx5-im fcitx5-chinese-addons fcitx5-rime rime-ice-git</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>设置环境变量。通过 <code>vim</code> 编辑文件 <code>/etc/environment</code>：</p>
 <p>在文件中加入以下内容并保存退出：</p>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">GTK_IM_MODULE=fcitx</span><br><span class="line">QT_IM_MODULE=fcitx</span><br><span class="line">XMODIFIERS=@im=fcitx</span><br><span class="line">SDL_IM_MODULE=fcitx</span><br><span class="line">GLFW_IM_MODULE=ibus</span><br></pre></td></tr></table></figure>
 </li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">GTK_IM_MODULE=fcitx</span><br><span class="line">QT_IM_MODULE=fcitx</span><br><span class="line">XMODIFIERS=@im=fcitx</span><br><span class="line">SDL_IM_MODULE=fcitx</span><br><span class="line">GLFW_IM_MODULE=ibus</span><br></pre></td></tr></table></figure>
+<li><p>创建ice的配置文件：</p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> ~/.local/share/fcitx5/rime <span class="comment"># 创建 rime 目录</span></span><br><span class="line">vim ~/.local/share/fcitx5/rime/default.custom.yaml</span><br></pre></td></tr></table></figure>
 
-<ol start="3">
-<li>创建ice的配置文件：</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> ~/.local/share/fcitx5/rime <span class="comment"># 创建 rime 目录</span></span><br><span class="line">vim ~/.local/share/fcitx5/rime/default.custom.yaml</span><br></pre></td></tr></table></figure>
+<p> 输入以下内容</p>
+ <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">patch:</span></span><br><span class="line"><span class="attr">&quot;menu/page_size&quot;:</span> <span class="number">5</span>  <span class="comment">#候选词</span></span><br><span class="line"><span class="attr">schema_list:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">schema:</span> <span class="string">rime_ice</span></span><br></pre></td></tr></table></figure>
 
-<p>输入以下内容</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">patch:</span></span><br><span class="line">  <span class="attr">&quot;menu/page_size&quot;:</span> <span class="number">5</span>  <span class="comment">#候选词</span></span><br><span class="line">  <span class="attr">schema_list:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">schema:</span> <span class="string">rime_ice</span></span><br></pre></td></tr></table></figure>
-
-<p>保存并退出</p>
-<ol start="4">
+<p> 保存并退出</p>
+</li>
 <li><p>右键输入法图标，重新启动或重新部署即可启用雾凇拼音输入法</p>
 </li>
 <li><p>（可选）增加萌娘百科词库</p>
+<p> 雾凇拼音取消了对萌娘词库的支持，如果需要得自己添加</p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yay -S fcitx5-pinyin-moegirl-rime</span><br></pre></td></tr></table></figure>
+
+<p> 安装完成之后将配置复制到个人配置目录</p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cp</span> /usr/share/rime-data/rime_ice.dict.yaml ~/.local/share/fcitx5/rime/rime_ice.dict.yaml</span><br></pre></td></tr></table></figure>
+
+<p> 打开配置文件</p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">code ~/.local/share/fcitx5/rime/rime_ice.dict.yaml</span><br></pre></td></tr></table></figure>
+
+<p> 根据提示在<code>import_tables:</code>中添加词库</p>
+ <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">import_tables:</span></span><br><span class="line"><span class="string">...</span></span><br><span class="line"><span class="string">...</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">moegirl</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>尝试输入中文</p>
 </li>
 </ol>
-<p>雾凇拼音取消了对萌娘词库的支持，如果需要得自己添加</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yay -S fcitx5-pinyin-moegirl-rime</span><br></pre></td></tr></table></figure>
-
-<p>安装完成之后将配置复制到个人配置目录</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cp</span> /usr/share/rime-data/rime_ice.dict.yaml ~/.local/share/fcitx5/rime/rime_ice.dict.yaml</span><br></pre></td></tr></table></figure>
-
-<p>打开配置文件</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">code ~/.local/share/fcitx5/rime/rime_ice.dict.yaml</span><br></pre></td></tr></table></figure>
-
-<p>根据提示在<code>import_tables:</code>中添加词库</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">import_tables:</span></span><br><span class="line">  <span class="string">...</span></span><br><span class="line">  <span class="string">...</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">moegirl</span></span><br></pre></td></tr></table></figure>
-
-<ol start="6">
-<li>尝试输入中文</li>
-</ol>
-<h1 id="使用体验"><a href="#使用体验" class="headerlink" title="使用体验"></a>使用体验</h1><p>更多的词库，更快的输入速度</p>
+<h2 id="使用体验"><a href="#使用体验" class="headerlink" title="使用体验"></a>使用体验</h2><p>更多的词库，更快的输入速度</p>
 ]]></content>
       <categories>
         <category>配置</category>
@@ -277,7 +271,7 @@
   <entry>
     <title>Steam游戏闪退问题</title>
     <url>/2023/04/03/Steam%E6%B8%B8%E6%88%8F%E9%97%AA%E9%80%80%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1> <img src="/2023/04/03/Steam%E6%B8%B8%E6%88%8F%E9%97%AA%E9%80%80%E9%97%AE%E9%A2%98/steam.jpg" class="" title="steam">
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2> <img src="/2023/04/03/Steam%E6%B8%B8%E6%88%8F%E9%97%AA%E9%80%80%E9%97%AE%E9%A2%98/steam.jpg" class="" title="steam">
 
 <blockquote>
 <p>pid: <a href="https://www.pixiv.net/artworks/106421292">106421292</a></p>
@@ -287,7 +281,7 @@
 <p>检查发现是vulkan驱动问题</p>
 <span id="more"></span>
 
-<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><p>yay下载steam时，自动下载的vulkan驱动因为排序如果不设置会自动下载amdvlk的驱动</p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>yay下载steam时，自动下载的vulkan驱动因为排序如果不设置会自动下载amdvlk的驱动</p>
 <p>可通过该命令查看已安装的驱动</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yay -Qs vulkan</span><br></pre></td></tr></table></figure>
 
@@ -309,7 +303,7 @@
   <entry>
     <title>vscode关于tab缩进空格</title>
     <url>/2023/05/26/vscode%E5%85%B3%E4%BA%8Etab%E7%BC%A9%E8%BF%9B%E7%A9%BA%E6%A0%BC/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><img src="/2023/05/26/vscode%E5%85%B3%E4%BA%8Etab%E7%BC%A9%E8%BF%9B%E7%A9%BA%E6%A0%BC/87977950_p0.jpg" class="" title="87977950_p0">
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><img src="/2023/05/26/vscode%E5%85%B3%E4%BA%8Etab%E7%BC%A9%E8%BF%9B%E7%A9%BA%E6%A0%BC/87977950_p0.jpg" class="" title="87977950_p0">
 
 <blockquote>
 <p>pid: 87977950</p>
@@ -318,44 +312,44 @@
 <p>现在的代码规范基本是使用空格作为Tab使用</p>
 <span id="more"></span>
 
-<h1 id="GUI设置"><a href="#GUI设置" class="headerlink" title="GUI设置"></a>GUI设置</h1><ol>
+<h2 id="GUI设置"><a href="#GUI设置" class="headerlink" title="GUI设置"></a>GUI设置</h2><ol>
 <li><p><code>Ctrl+,</code> 打开设置</p>
 <img src="/2023/05/26/vscode%E5%85%B3%E4%BA%8Etab%E7%BC%A9%E8%BF%9B%E7%A9%BA%E6%A0%BC/image-20230526104111357.png" class="" title="image-20230526104111357">
 </li>
 <li><p>Tab设置为4空格</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">editor.tabSize</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">editor.tabSize</span><br></pre></td></tr></table></figure>
 
 <img src="/2023/05/26/vscode%E5%85%B3%E4%BA%8Etab%E7%BC%A9%E8%BF%9B%E7%A9%BA%E6%A0%BC/image-20230526104034532.png" class="" title="image-20230526104034532">
 </li>
 <li><p>按下Tab时插入空格</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">editor.insertSpaces</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">editor.insertSpaces</span><br></pre></td></tr></table></figure>
 
 <img src="/2023/05/26/vscode%E5%85%B3%E4%BA%8Etab%E7%BC%A9%E8%BF%9B%E7%A9%BA%E6%A0%BC/image-20230526103955873.png" class="" title="image-20230526103955873">
 </li>
 <li><p>关闭detect Indentation</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">editor.detectIndentation</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">editor.detectIndentation</span><br></pre></td></tr></table></figure>
 
 <img src="/2023/05/26/vscode%E5%85%B3%E4%BA%8Etab%E7%BC%A9%E8%BF%9B%E7%A9%BA%E6%A0%BC/image-20230526104310819.png" class="" title="image-20230526104310819">
 </li>
 <li><p>保存文件时删除行末空格</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">files.trimTrailingWhitespace</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">files.trimTrailingWhitespace</span><br></pre></td></tr></table></figure>
 
 <img src="/2023/05/26/vscode%E5%85%B3%E4%BA%8Etab%E7%BC%A9%E8%BF%9B%E7%A9%BA%E6%A0%BC/image-20230526104420352.png" class="" title="image-20230526104420352">
 </li>
 <li><p>编辑器中显示空格、Tab符号</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">renderControlCharacters</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">renderControlCharacters</span><br></pre></td></tr></table></figure>
 
 <img src="/2023/05/26/vscode%E5%85%B3%E4%BA%8Etab%E7%BC%A9%E8%BF%9B%E7%A9%BA%E6%A0%BC/image-20230526104459048.png" class="" title="image-20230526104459048">
 
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">renderWhitespace</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">renderWhitespace</span><br></pre></td></tr></table></figure>
 
 <p>选择all显示全部空格</p>
 <img src="/2023/05/26/vscode%E5%85%B3%E4%BA%8Etab%E7%BC%A9%E8%BF%9B%E7%A9%BA%E6%A0%BC/image-20230526104553878.png" class="" title="image-20230526104553878"></li>
 </ol>
-<h1 id="使用setting-json设置"><a href="#使用setting-json设置" class="headerlink" title="使用setting.json设置"></a>使用setting.json设置</h1><figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;editor.tabSize&quot;</span><span class="punctuation">:</span> <span class="number">4</span><span class="punctuation">,</span><span class="comment">//tab为四个空格</span></span><br><span class="line"><span class="attr">&quot;editor.insertSpaces&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span> <span class="comment">//tab转为空格</span></span><br><span class="line"><span class="attr">&quot;editor.detectIndentation&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span>  <span class="comment">//关闭检测第一个tab后面就tab</span></span><br><span class="line"><span class="attr">&quot;files.trimTrailingWhitespace&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span> <span class="comment">//保存文件删除多余空格</span></span><br><span class="line"><span class="attr">&quot;editor.renderControlCharacters&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span> <span class="comment">//制表符显示-&gt;</span></span><br><span class="line"><span class="attr">&quot;editor.renderWhitespace&quot;</span><span class="punctuation">:</span> <span class="string">&quot;all&quot;</span><span class="punctuation">,</span> <span class="comment">//空格显示...</span></span><br></pre></td></tr></table></figure>
+<h2 id="使用setting-json设置"><a href="#使用setting-json设置" class="headerlink" title="使用setting.json设置"></a>使用setting.json设置</h2><figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;editor.tabSize&quot;</span><span class="punctuation">:</span> <span class="number">4</span><span class="punctuation">,</span><span class="comment">//tab为四个空格</span></span><br><span class="line"><span class="attr">&quot;editor.insertSpaces&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span> <span class="comment">//tab转为空格</span></span><br><span class="line"><span class="attr">&quot;editor.detectIndentation&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span>  <span class="comment">//关闭检测第一个tab后面就tab</span></span><br><span class="line"><span class="attr">&quot;files.trimTrailingWhitespace&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span> <span class="comment">//保存文件删除多余空格</span></span><br><span class="line"><span class="attr">&quot;editor.renderControlCharacters&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span> <span class="comment">//制表符显示-&gt;</span></span><br><span class="line"><span class="attr">&quot;editor.renderWhitespace&quot;</span><span class="punctuation">:</span> <span class="string">&quot;all&quot;</span><span class="punctuation">,</span> <span class="comment">//空格显示...</span></span><br></pre></td></tr></table></figure>
 
-<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>VSCode真的是越用越好用啊</p>
-<p>♥️来之🇨🇳</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>VSCode真的是越用越好用啊</p>
+<p>♥️ 来自 🇨🇳</p>
 ]]></content>
       <categories>
         <category>配置</category>
@@ -367,7 +361,7 @@
   <entry>
     <title>在KDE下使用Wallpaper Engine</title>
     <url>/2023/04/19/%E5%9C%A8linux%E4%B8%8B%E4%BD%BF%E7%94%A8Wallpaper-Engine/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><img src="/2023/04/19/%E5%9C%A8linux%E4%B8%8B%E4%BD%BF%E7%94%A8Wallpaper-Engine/104696295_p0.png" class="" title="104696295_p0">
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><img src="/2023/04/19/%E5%9C%A8linux%E4%B8%8B%E4%BD%BF%E7%94%A8Wallpaper-Engine/104696295_p0.png" class="" title="104696295_p0">
 
 <blockquote>
 <p>pid：<a href="https://www.pixiv.net/artworks/104696295">104696295</a></p>
@@ -376,29 +370,29 @@
 <p>找到了一个插件可以做到桌面播放Wallpaper Engine中的视频</p>
 <span id="more"></span>
 
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>以下是官方地址：</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>以下是官方地址：</p>
 <p><a href="https://github.com/catsout/wallpaper-engine-kde-plugin">wallpaper-engine-kde-plugin</a></p>
 <p>其中有相关操作说明，这里给下部分汉化和相关问题解决</p>
-<h2 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h2><p>Arch:</p>
+<h3 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h3><p>Arch:</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pacman -S extra-cmake-modules plasma-framework gst-libav base-devel mpv-git python-websockets qt5-declarative qt5-websockets qt5-webchannel vulkan-headers cmake</span><br></pre></td></tr></table></figure>
 
 <p>本人使用arch与mpv-git</p>
-<h2 id="构建与安装"><a href="#构建与安装" class="headerlink" title="构建与安装"></a>构建与安装</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Download source</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/catsout/wallpaper-engine-kde-plugin.git</span><br><span class="line"><span class="built_in">cd</span> wallpaper-engine-kde-plugin</span><br><span class="line"></span><br><span class="line"><span class="comment"># Download submodule (glslang)</span></span><br><span class="line">git submodule update --init</span><br><span class="line"></span><br><span class="line"><span class="comment"># Configure</span></span><br><span class="line"><span class="comment"># &#x27;USE_PLASMAPKG=ON&#x27;: using plasmapkg2 tool to install plugin</span></span><br><span class="line"><span class="built_in">mkdir</span> build &amp;&amp; <span class="built_in">cd</span> build</span><br><span class="line">cmake .. -DUSE_PLASMAPKG=ON</span><br><span class="line"></span><br><span class="line"><span class="comment"># Build</span></span><br><span class="line">make -j<span class="variable">$nproc</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Install package (ignore if USE_PLASMAPKG=OFF for system-wide installation)</span></span><br><span class="line">make install_pkg</span><br><span class="line"><span class="comment"># install lib</span></span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
+<h3 id="构建与安装"><a href="#构建与安装" class="headerlink" title="构建与安装"></a>构建与安装</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Download source</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/catsout/wallpaper-engine-kde-plugin.git</span><br><span class="line"><span class="built_in">cd</span> wallpaper-engine-kde-plugin</span><br><span class="line"></span><br><span class="line"><span class="comment"># Download submodule (glslang)</span></span><br><span class="line">git submodule update --init</span><br><span class="line"></span><br><span class="line"><span class="comment"># Configure</span></span><br><span class="line"><span class="comment"># &#x27;USE_PLASMAPKG=ON&#x27;: using plasmapkg2 tool to install plugin</span></span><br><span class="line"><span class="built_in">mkdir</span> build &amp;&amp; <span class="built_in">cd</span> build</span><br><span class="line">cmake .. -DUSE_PLASMAPKG=ON</span><br><span class="line"></span><br><span class="line"><span class="comment"># Build</span></span><br><span class="line">make -j<span class="variable">$nproc</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Install package (ignore if USE_PLASMAPKG=OFF for system-wide installation)</span></span><br><span class="line">make install_pkg</span><br><span class="line"><span class="comment"># install lib</span></span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
 
 <p>note：</p>
 <p>这一过程会安装上相关的插件，更新也需运行上方的命令</p>
-<h2 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h2><ol>
+<h3 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h3><ol>
 <li>删除该文件中列出的文件 <code>wallpaper-engine-kde-plugin/build/install_manifest.txt</code></li>
 <li><code>plasmapkg2 -r ~/.local/share/plasma/wallpapers/com.github.casout.wallpaperEngineKde</code></li>
 </ol>
-<h1 id="使用相关"><a href="#使用相关" class="headerlink" title="使用相关"></a>使用相关</h1><ol>
+<h2 id="使用相关"><a href="#使用相关" class="headerlink" title="使用相关"></a>使用相关</h2><ol>
 <li><p>需要安装steam</p>
 </li>
 <li><p>桌面右键配置桌面，选择相关插件</p>
 <p>选择Wallpaper Engine下载目录，一般默认<code>~/.local/share/Steam</code></p>
 </li>
 </ol>
-<h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><ol>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol>
 <li><p>scene场景虽然可以播放但是并不稳定，最好还是用video</p>
 </li>
 <li><p>重启KDE桌面的命令为</p>
@@ -409,13 +403,13 @@
 <li><p>没找到循环播放的选项，测试发现mpv可以循环</p>
 </li>
 </ol>
-<h2 id="崩溃之后的处理"><a href="#崩溃之后的处理" class="headerlink" title="崩溃之后的处理"></a>崩溃之后的处理</h2><ul>
+<h3 id="崩溃之后的处理"><a href="#崩溃之后的处理" class="headerlink" title="崩溃之后的处理"></a>崩溃之后的处理</h3><ul>
 <li>在<code>~/.config/plasma-org.kde.plasma.desktop-appletsrc</code>文件中删除<code>WallpaperSource</code>这一行</li>
 <li>重启KDE桌面</li>
 </ul>
-<h2 id="设置后桌面黑屏"><a href="#设置后桌面黑屏" class="headerlink" title="设置后桌面黑屏"></a>设置后桌面黑屏</h2><p>缺少<a href="https://wiki.archlinux.org/title/GStreamer">gstreamer</a>相关解码器</p>
+<h3 id="设置后桌面黑屏"><a href="#设置后桌面黑屏" class="headerlink" title="设置后桌面黑屏"></a>设置后桌面黑屏</h3><p>缺少<a href="https://wiki.archlinux.org/title/GStreamer">gstreamer</a>相关解码器</p>
 <p>下载安装后重启即可</p>
-<h1 id="使用体验"><a href="#使用体验" class="headerlink" title="使用体验"></a>使用体验</h1><p>在linux上成功使用Wallpaper Engine</p>
+<h2 id="使用体验"><a href="#使用体验" class="headerlink" title="使用体验"></a>使用体验</h2><p>在linux上成功使用Wallpaper Engine</p>
 <p>在只有桌面的情况下自动熄屏失效</p>
 <p>会略微增加发热</p>
 ]]></content>
@@ -431,7 +425,7 @@
   <entry>
     <title>记录ArchLinux出现的声音问题</title>
     <url>/2023/07/25/%E8%AE%B0%E5%BD%95ArchLinux%E5%87%BA%E7%8E%B0%E7%9A%84%E5%A3%B0%E9%9F%B3%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><img src="/2023/07/25/%E8%AE%B0%E5%BD%95ArchLinux%E5%87%BA%E7%8E%B0%E7%9A%84%E5%A3%B0%E9%9F%B3%E9%97%AE%E9%A2%98/101272091_p0.jpg" class="" title="101272091_p0">
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><img src="/2023/07/25/%E8%AE%B0%E5%BD%95ArchLinux%E5%87%BA%E7%8E%B0%E7%9A%84%E5%A3%B0%E9%9F%B3%E9%97%AE%E9%A2%98/101272091_p0.jpg" class="" title="101272091_p0">
 
 <blockquote>
 <p>pid: <a href="https://www.pixiv.net/artworks/101272091">101272091</a></p>
@@ -442,12 +436,12 @@
 <p>现在<code>KDE6</code>默认使用<code>pipewire</code>，同时<code>pipewire-media-session</code>与<code>wireplumber</code>可同时安装</p>
 <span id="more"></span>
 
-<h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><ol>
+<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><ol>
 <li>在播放视频时快速多次左右跳转时，会概率出现电音情况</li>
 <li>播放浏览器视频时会卡住，静音则会继续播放</li>
 <li>使用mpv播放视频按下空格，会突然退出</li>
 </ol>
-<h1 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h1><p>多次尝试之后发现，当我使用<code>pipewire</code>时会出现「1」情况，而在使用<code>pulseaudio</code>不会出现</p>
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>多次尝试之后发现，当我使用<code>pipewire</code>时会出现「1」情况，而在使用<code>pulseaudio</code>不会出现</p>
 <ul>
 <li>快速跳转时<code>pipewire</code>播放音频的速度和时间比<code>pulseaudio</code>更快和少，即延迟更低，但是电音出现概率上升了，不清楚为何</li>
 </ul>
@@ -464,7 +458,7 @@
 <p>以下是我的软件包截图</p>
 <img src="/2023/07/25/%E8%AE%B0%E5%BD%95ArchLinux%E5%87%BA%E7%8E%B0%E7%9A%84%E5%A3%B0%E9%9F%B3%E9%97%AE%E9%A2%98/image-20230725151744045.png" class="" title="image-20230725151744045">
 
-<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>调试这个声音问题前前后后花了半个月</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>调试这个声音问题前前后后花了半个月</p>
 <p>终于把他整的差不多了</p>
 ]]></content>
       <categories>
@@ -505,7 +499,7 @@
 <p><a href="https://github.com/po5/thumbfast">thumbfast</a></p>
 <p>注意该项目需要在<code>mpv.conf</code>中添加 osc&#x3D;no 并配置支持该插件的 osc 才可运行</p>
 <p>本人使用 MPV-lazy 的<a href="https://github.com/hooke007/MPV_lazy/blob/main/portable_config/scripts/osc_plus.lua">osc_plus 脚本</a></p>
-<p>并配合其配套的 <a href="https://github.com/hooke007/MPV_lazy/blob/main/portable_config/script-opts/osc.conf">osc </a> 和 <a href="https://github.com/hooke007/MPV_lazy/blob/main/portable_config/script-opts/osc_plus.conf">osc_plus</a> 配置文件</p>
+<p>并配合其配套的 <a href="https://github.com/hooke007/MPV_lazy/blob/main/portable_config/script-opts/osc.conf">osc</a> 和 <a href="https://github.com/hooke007/MPV_lazy/blob/main/portable_config/script-opts/osc_plus.conf">osc_plus</a> 配置文件</p>
 <p>需要注意的是这俩文件需改为同一文件名</p>
 <h2 id="Playlistmanager"><a href="#Playlistmanager" class="headerlink" title="Playlistmanager"></a>Playlistmanager</h2><p>管理播放列表的插件</p>
 <p><a href="https://github.com/jonniek/mpv-playlistmanager">Playlistmanager</a></p>
@@ -522,7 +516,7 @@
 
 <p>⬆️ 这里是可以修改相关操作的样式，按照说明我增加了颜色相关设置</p>
 <h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><blockquote>
-<p>[<a href="https://vcb-s.com/archives/7594">VCB-Studio 科普教程 2.3] 跨平台播放器 mpv 配置入门</a></p>
+<p><a href="https://vcb-s.com/archives/7594">[VCB-Studio 科普教程 2.3] 跨平台播放器 mpv 配置入门</a></p>
 <p><a href="https://github.com/hooke007/MPV_lazy">MPV_lazy</a></p>
 </blockquote>
 ]]></content>

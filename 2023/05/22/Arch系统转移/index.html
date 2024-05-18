@@ -28,7 +28,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://lockrim.top/2023/05/22/Arch%E7%B3%BB%E7%BB%9F%E8%BD%AC%E7%A7%BB/103842593_p0.png">
 <meta property="article:published_time" content="2023-05-22T00:36:13.000Z">
-<meta property="article:modified_time" content="2023-05-22T01:37:19.267Z">
+<meta property="article:modified_time" content="2024-05-18T12:33:40.423Z">
 <meta property="article:author" content="LockRim">
 <meta property="article:tag" content="Arch">
 <meta name="twitter:card" content="summary">
@@ -230,10 +230,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2023-05-22 08:36:13 / 修改时间：09:37:19" itemprop="dateCreated datePublished" datetime="2023-05-22T08:36:13+08:00">2023-05-22</time>
+              <time title="创建时间：2023-05-22 08:36:13" itemprop="dateCreated datePublished" datetime="2023-05-22T08:36:13+08:00">2023-05-22</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-05-18 20:33:40" itemprop="dateModified" datetime="2024-05-18T20:33:40+08:00">2024-05-18</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -269,7 +275,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><img src="/2023/05/22/Arch%E7%B3%BB%E7%BB%9F%E8%BD%AC%E7%A7%BB/103842593_p0.png" class="" title="103842593_p0">
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><img src="/2023/05/22/Arch%E7%B3%BB%E7%BB%9F%E8%BD%AC%E7%A7%BB/103842593_p0.png" class="" title="103842593_p0">
 
 <blockquote>
 <p>pid：103842593</p>
@@ -280,14 +286,14 @@
 <p>参考自 <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Migrate_installation_to_new_hardware">将安装迁移到新硬件（ArchWiki）</a></p>
 <span id="more"></span>
 
-<h1 id="前置工作"><a href="#前置工作" class="headerlink" title="前置工作"></a>前置工作</h1><ul>
+<h2 id="前置工作"><a href="#前置工作" class="headerlink" title="前置工作"></a>前置工作</h2><ul>
 <li><p>需要U盘安装Arch系统</p>
 <p><a target="_blank" rel="noopener" href="https://mirrors.ustc.edu.cn/">中科大镜像</a></p>
 </li>
 <li><p>系统转移到的空间 &gt; 转移前的空间</p>
 </li>
 </ul>
-<h1 id="迁移工作"><a href="#迁移工作" class="headerlink" title="迁移工作"></a>迁移工作</h1><h2 id="使用dd进行系统迁移"><a href="#使用dd进行系统迁移" class="headerlink" title="使用dd进行系统迁移"></a>使用<code>dd</code>进行系统迁移</h2><p><a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Dd#Disk_cloning_and_restore">dd（ArchWiki）</a></p>
+<h2 id="迁移工作"><a href="#迁移工作" class="headerlink" title="迁移工作"></a>迁移工作</h2><h3 id="使用dd进行系统迁移"><a href="#使用dd进行系统迁移" class="headerlink" title="使用dd进行系统迁移"></a>使用<code>dd</code>进行系统迁移</h3><p><a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Dd#Disk_cloning_and_restore">dd（ArchWiki）</a></p>
 <p>假设从<code>/dev/sda1</code>到<code>/dev/sdb1</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">dd</span> <span class="keyword">if</span>=/dev/sda1 of=/dev/sdb1 bs=64K conv=noerror,<span class="built_in">sync</span> status=progress</span><br></pre></td></tr></table></figure>
 
@@ -299,20 +305,20 @@
 <li><p><strong>注意这会将UUID也一起复制</strong>，在同一硬盘迁移中需更改UUID值</p>
 </li>
 </ul>
-<h2 id="更新fstab"><a href="#更新fstab" class="headerlink" title="更新fstab"></a>更新fstab</h2><p>挂载<code>/mnt</code>分区，<code>EFI</code>分区，<code>swap</code>分区</p>
+<h3 id="更新fstab"><a href="#更新fstab" class="headerlink" title="更新fstab"></a>更新fstab</h3><p>挂载<code>/mnt</code>分区，<code>EFI</code>分区，<code>swap</code>分区</p>
 <p>更新fstab</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">genfstab -U /mnt &gt; /mnt/etc/fstab</span><br></pre></td></tr></table></figure>
 
-<h2 id="重新生成内核镜像"><a href="#重新生成内核镜像" class="headerlink" title="重新生成内核镜像"></a>重新生成内核镜像</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkinitcpio -P</span><br></pre></td></tr></table></figure>
+<h3 id="重新生成内核镜像"><a href="#重新生成内核镜像" class="headerlink" title="重新生成内核镜像"></a>重新生成内核镜像</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkinitcpio -P</span><br></pre></td></tr></table></figure>
 
-<h1 id="相关错误"><a href="#相关错误" class="headerlink" title="相关错误"></a>相关错误</h1><ul>
+<h2 id="相关错误"><a href="#相关错误" class="headerlink" title="相关错误"></a>相关错误</h2><ul>
 <li><p>更新UUID值</p>
 </li>
 <li><p>使用btrfs文件系统没有更新所以在dolphin中没有扩大</p>
 <p>使用以下命令</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">btrfs filesystem resize max /</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h1 id="后言"><a href="#后言" class="headerlink" title="后言"></a>后言</h1><p>好评如潮，♥️来自🇨🇳</p>
+<h2 id="后言"><a href="#后言" class="headerlink" title="后言"></a>后言</h2><p>好评如潮，♥️来自🇨🇳</p>
 <p>Linux空间大了好多真是舒服啊</p>
 
     </div>
@@ -398,7 +404,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E7%BD%AE%E5%B7%A5%E4%BD%9C"><span class="nav-number">2.</span> <span class="nav-text">前置工作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%81%E7%A7%BB%E5%B7%A5%E4%BD%9C"><span class="nav-number">3.</span> <span class="nav-text">迁移工作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8dd%E8%BF%9B%E8%A1%8C%E7%B3%BB%E7%BB%9F%E8%BF%81%E7%A7%BB"><span class="nav-number">3.1.</span> <span class="nav-text">使用dd进行系统迁移</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0fstab"><span class="nav-number">3.2.</span> <span class="nav-text">更新fstab</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E6%96%B0%E7%94%9F%E6%88%90%E5%86%85%E6%A0%B8%E9%95%9C%E5%83%8F"><span class="nav-number">3.3.</span> <span class="nav-text">重新生成内核镜像</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E9%94%99%E8%AF%AF"><span class="nav-number">4.</span> <span class="nav-text">相关错误</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%8E%E8%A8%80"><span class="nav-number">5.</span> <span class="nav-text">后言</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%BD%AE%E5%B7%A5%E4%BD%9C"><span class="nav-number">2.</span> <span class="nav-text">前置工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%81%E7%A7%BB%E5%B7%A5%E4%BD%9C"><span class="nav-number">3.</span> <span class="nav-text">迁移工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8dd%E8%BF%9B%E8%A1%8C%E7%B3%BB%E7%BB%9F%E8%BF%81%E7%A7%BB"><span class="nav-number">3.1.</span> <span class="nav-text">使用dd进行系统迁移</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0fstab"><span class="nav-number">3.2.</span> <span class="nav-text">更新fstab</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E6%96%B0%E7%94%9F%E6%88%90%E5%86%85%E6%A0%B8%E9%95%9C%E5%83%8F"><span class="nav-number">3.3.</span> <span class="nav-text">重新生成内核镜像</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E9%94%99%E8%AF%AF"><span class="nav-number">4.</span> <span class="nav-text">相关错误</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E8%A8%80"><span class="nav-number">5.</span> <span class="nav-text">后言</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
