@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 8.1.1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/ava.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/ava.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/ava.jpg">
+  <link rel="mask-icon" href="/images/ava.jpg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://googlefonts.cn/css2?family=Noto+Serif+SC:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"lockrim.top","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"stackoverflow-dark","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":300},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="前言  pid: 87977950  VSCode的Tab代码缩进比较混乱，设置一下会比较好 现在的代码规范基本是使用空格作为Tab使用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vscode关于tab缩进空格">
+<meta property="og:url" content="http://lockrim.top/2023/05/vscode%E5%85%B3%E4%BA%8Etab%E7%BC%A9%E8%BF%9B%E7%A9%BA%E6%A0%BC/index.html">
+<meta property="og:site_name" content="LockRim·小站">
+<meta property="og:description" content="前言  pid: 87977950  VSCode的Tab代码缩进比较混乱，设置一下会比较好 现在的代码规范基本是使用空格作为Tab使用">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://lockrim.top/2023/05/vscode%E5%85%B3%E4%BA%8Etab%E7%BC%A9%E8%BF%9B%E7%A9%BA%E6%A0%BC/87977950_p0.jpg">
+<meta property="og:image" content="http://lockrim.top/2023/05/vscode%E5%85%B3%E4%BA%8Etab%E7%BC%A9%E8%BF%9B%E7%A9%BA%E6%A0%BC/image-20230526104111357.png">
+<meta property="og:image" content="http://lockrim.top/2023/05/vscode%E5%85%B3%E4%BA%8Etab%E7%BC%A9%E8%BF%9B%E7%A9%BA%E6%A0%BC/image-20230526104034532.png">
+<meta property="og:image" content="http://lockrim.top/2023/05/vscode%E5%85%B3%E4%BA%8Etab%E7%BC%A9%E8%BF%9B%E7%A9%BA%E6%A0%BC/image-20230526103955873.png">
+<meta property="og:image" content="http://lockrim.top/2023/05/vscode%E5%85%B3%E4%BA%8Etab%E7%BC%A9%E8%BF%9B%E7%A9%BA%E6%A0%BC/image-20230526104310819.png">
+<meta property="og:image" content="http://lockrim.top/2023/05/vscode%E5%85%B3%E4%BA%8Etab%E7%BC%A9%E8%BF%9B%E7%A9%BA%E6%A0%BC/image-20230526104420352.png">
+<meta property="og:image" content="http://lockrim.top/2023/05/vscode%E5%85%B3%E4%BA%8Etab%E7%BC%A9%E8%BF%9B%E7%A9%BA%E6%A0%BC/image-20230526104459048.png">
+<meta property="og:image" content="http://lockrim.top/2023/05/vscode%E5%85%B3%E4%BA%8Etab%E7%BC%A9%E8%BF%9B%E7%A9%BA%E6%A0%BC/image-20230526104553878.png">
+<meta property="article:published_time" content="2023-05-26T02:19:09.000Z">
+<meta property="article:modified_time" content="2024-05-18T12:44:31.423Z">
+<meta property="article:author" content="LockRim">
+<meta property="article:tag" content="vscode">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://lockrim.top/2023/05/vscode%E5%85%B3%E4%BA%8Etab%E7%BC%A9%E8%BF%9B%E7%A9%BA%E6%A0%BC/87977950_p0.jpg">
+
+
+<link rel="canonical" href="http://lockrim.top/2023/05/vscode%E5%85%B3%E4%BA%8Etab%E7%BC%A9%E8%BF%9B%E7%A9%BA%E6%A0%BC/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://lockrim.top/2023/05/vscode%E5%85%B3%E4%BA%8Etab%E7%BC%A9%E8%BF%9B%E7%A9%BA%E6%A0%BC/","path":"2023/05/vscode关于tab缩进空格/","title":"vscode关于tab缩进空格"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>vscode关于tab缩进空格 | LockRim·小站</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="https://cdnjs.cloudflare.com/ajax/libs/ribbon.js/1.0.2/ribbon.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.1.0/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">LockRim·小站</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">个人博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-番剧"><a href="/bangumis/" rel="section"><i class="fa fa-tv fa-fw"></i>番剧</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GUI%E8%AE%BE%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">GUI设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8setting-json%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text">使用setting.json设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="nav-number">4.</span> <span class="nav-text">后记</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="LockRim"
+      src="/images/ava.jpg">
+  <p class="site-author-name" itemprop="name">LockRim</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/LockRim" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;LockRim" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:lockrim.czh@gmail.com" title="E-Mail → mailto:lockrim.czh@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/lock_rim" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;lock_rim" rel="noopener me" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/22757457" title="BiliBili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;22757457" rel="noopener me" target="_blank"><i class="fab fa-bilibili fa-fw"></i>BiliBili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://bgm.tv/user/lock_rim" title="Bangumi → https:&#x2F;&#x2F;bgm.tv&#x2F;user&#x2F;lock_rim" rel="noopener me" target="_blank"><i class="fa fa-tv fa-fw"></i>Bangumi</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://lockrim.top/2023/05/vscode%E5%85%B3%E4%BA%8Etab%E7%BC%A9%E8%BF%9B%E7%A9%BA%E6%A0%BC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/ava.jpg">
+      <meta itemprop="name" content="LockRim">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LockRim·小站">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="vscode关于tab缩进空格 | LockRim·小站">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          vscode关于tab缩进空格
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-05-26 10:19:09" itemprop="dateCreated datePublished" datetime="2023-05-26T10:19:09+08:00">2023-05-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-05-18 20:44:31" itemprop="dateModified" datetime="2024-05-18T20:44:31+08:00">2024-05-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%85%8D%E7%BD%AE/" itemprop="url" rel="index"><span itemprop="name">配置</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>208</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><img src="/2023/05/vscode%E5%85%B3%E4%BA%8Etab%E7%BC%A9%E8%BF%9B%E7%A9%BA%E6%A0%BC/87977950_p0.jpg" alt="87977950_p0"></p>
+<blockquote>
+<p>pid: 87977950</p>
+</blockquote>
+<p>VSCode的Tab代码缩进比较混乱，设置一下会比较好</p>
+<p>现在的代码规范基本是使用空格作为Tab使用</p>
+<span id="more"></span>
+
+<h2 id="GUI设置"><a href="#GUI设置" class="headerlink" title="GUI设置"></a>GUI设置</h2><ol>
+<li><p><code>Ctrl+,</code> 打开设置</p>
+<p><img src="/2023/05/vscode%E5%85%B3%E4%BA%8Etab%E7%BC%A9%E8%BF%9B%E7%A9%BA%E6%A0%BC/image-20230526104111357.png" alt="image-20230526104111357"></p>
+</li>
+<li><p>Tab设置为4空格</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">editor.tabSize</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2023/05/vscode%E5%85%B3%E4%BA%8Etab%E7%BC%A9%E8%BF%9B%E7%A9%BA%E6%A0%BC/image-20230526104034532.png" alt="image-20230526104034532"></p>
+</li>
+<li><p>按下Tab时插入空格</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">editor.insertSpaces</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2023/05/vscode%E5%85%B3%E4%BA%8Etab%E7%BC%A9%E8%BF%9B%E7%A9%BA%E6%A0%BC/image-20230526103955873.png" alt="image-20230526103955873"></p>
+</li>
+<li><p>关闭detect Indentation</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">editor.detectIndentation</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2023/05/vscode%E5%85%B3%E4%BA%8Etab%E7%BC%A9%E8%BF%9B%E7%A9%BA%E6%A0%BC/image-20230526104310819.png" alt="image-20230526104310819"></p>
+</li>
+<li><p>保存文件时删除行末空格</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">files.trimTrailingWhitespace</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2023/05/vscode%E5%85%B3%E4%BA%8Etab%E7%BC%A9%E8%BF%9B%E7%A9%BA%E6%A0%BC/image-20230526104420352.png" alt="image-20230526104420352"></p>
+</li>
+<li><p>编辑器中显示空格、Tab符号</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">renderControlCharacters</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2023/05/vscode%E5%85%B3%E4%BA%8Etab%E7%BC%A9%E8%BF%9B%E7%A9%BA%E6%A0%BC/image-20230526104459048.png" alt="image-20230526104459048"></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">renderWhitespace</span><br></pre></td></tr></table></figure>
+
+<p>选择all显示全部空格</p>
+<p><img src="/2023/05/vscode%E5%85%B3%E4%BA%8Etab%E7%BC%A9%E8%BF%9B%E7%A9%BA%E6%A0%BC/image-20230526104553878.png" alt="image-20230526104553878"></p>
+</li>
+</ol>
+<h2 id="使用setting-json设置"><a href="#使用setting-json设置" class="headerlink" title="使用setting.json设置"></a>使用setting.json设置</h2><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;editor.tabSize&quot;</span><span class="punctuation">:</span> <span class="number">4</span><span class="punctuation">,</span><span class="comment">//tab为四个空格</span></span><br><span class="line"><span class="attr">&quot;editor.insertSpaces&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span> <span class="comment">//tab转为空格</span></span><br><span class="line"><span class="attr">&quot;editor.detectIndentation&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span>  <span class="comment">//关闭检测第一个tab后面就tab</span></span><br><span class="line"><span class="attr">&quot;files.trimTrailingWhitespace&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span> <span class="comment">//保存文件删除多余空格</span></span><br><span class="line"><span class="attr">&quot;editor.renderControlCharacters&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span> <span class="comment">//制表符显示-&gt;</span></span><br><span class="line"><span class="attr">&quot;editor.renderWhitespace&quot;</span><span class="punctuation">:</span> <span class="string">&quot;all&quot;</span><span class="punctuation">,</span> <span class="comment">//空格显示...</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>VSCode真的是越用越好用啊</p>
+<p>♥️ 来自 🇨🇳</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/vscode/" rel="tag"># vscode</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/05/Arch%E7%B3%BB%E7%BB%9F%E8%BD%AC%E7%A7%BB/" rel="prev" title="Arch系统转移">
+                  <i class="fa fa-angle-left"></i> Arch系统转移
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/07/%E8%AE%B0%E5%BD%95ArchLinux%E5%87%BA%E7%8E%B0%E7%9A%84%E5%A3%B0%E9%9F%B3%E9%97%AE%E9%A2%98/" rel="next" title="记录ArchLinux出现的声音问题">
+                  记录ArchLinux出现的声音问题 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2021 – 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">LockRim</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">5k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">17 分钟</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"LockRim","repo":"lockrim.github.io","client_id":"50dc424ae6a283cdd3af","client_secret":"589a285e1fd52efd6ca02654a320e1df1207232f","admin_user":"LockRim","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"body":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"326cca3029db5b81c066b4e9174cfd21"}</script>
+<script src="/js/third-party/comments/gitalk.js" defer></script>
+
+ 
+
+</body>
+</html>
